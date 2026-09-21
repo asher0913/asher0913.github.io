@@ -3,241 +3,197 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yixuan Zhang</title>
-  <meta name="description" content="Yixuan (Asher) Zhang — machine learning engineer. Privacy-preserving inference, on-device computer vision, LLM serving. MCS at UIUC.">
-  <meta name="theme-color" content="#070708">
+  <title>Yixuan Zhang — Machine Learning Engineer</title>
+  <meta name="description" content="Yixuan Zhang. Machine learning engineer. Privacy-preserving inference, on-device vision, LLM serving. MCS at UIUC.">
+  <meta name="theme-color" content="#f6f5f2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect fill='%23070708' width='64' height='64'/><text x='8' y='48' font-family='Arial Black' font-size='36' fill='%23c8f04d'>YZ</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect rx='12' fill='%23141413' width='64' height='64'/><text x='10' y='44' font-size='28' font-family='Arial' fill='white' font-weight='700'>YZ</text></svg>">
 </head>
 <body>
   <a class="skip" href="#work">Skip to work</a>
   <nav class="nav">
-    <a class="mark" href="#">YZ<span>.</span></a>
+    <a class="logo" href="#">Yixuan Zhang</a>
     <div class="nav-links">
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
-    <a class="nav-cta" href="Yixuan_Zhang_MLE_Resume.pdf">Résumé</a>
+    <a class="btn" href="Yixuan_Zhang_MLE_Resume.pdf">Résumé</a>
   </nav>
 
-  <header class="hero">
-    <p class="kicker">Machine learning engineer</p>
-    <h1>Yixuan<br>Zhang</h1>
-    <p class="hero-sub">I take models off the notebook: <strong>privacy-preserving inference</strong>, <strong>on-device vision</strong>, and the <strong>serving path</strong> in between.</p>
-    <div class="hero-meta">
-      <span>UIUC MCS · Champaign, IL</span>
-      <a href="mailto:yixuan58@illinois.edu">yixuan58@illinois.edu</a>
-      <a href="https://github.com/asher0913">GitHub</a>
-      <a href="https://www.linkedin.com/in/yixuan-zhang-b656392b5">LinkedIn</a>
-      <a href="tel:+16287263686">(628) 726-3686</a>
-    </div>
-  </header>
-
-  <section id="work">
-    <div class="sec-head">
-      <h2>Selected work</h2>
-      <span class="idx">01 — 08</span>
-    </div>
-    <p class="lede">The résumé is one page. This is the rest — public repos, with the number that mattered.</p>
-
-    <a class="work" data-reveal href="https://github.com/asher0913/DualPathCEM">
-      <span class="num">01</span>
-      <h3>DualPath-CEM</h3>
-      <span class="stat">81.96% top-1</span>
-      <span class="arrow">↗</span>
-      <p>Final-year thesis. Dual-path split inference that beats Noise_ARL+CEM by 1.63 points while raising decoder / GAN reconstruction MSE 75.8% and 74.9%.</p>
-      <div class="tags"><span class="tag">PyTorch</span><span class="tag">Privacy ML</span><span class="tag">FaceScrub</span></div>
-    </a>
-    <a class="work" data-reveal href="https://github.com/asher0913/skill-router">
-      <span class="num">02</span>
-      <h3>SkillRouter</h3>
-      <span class="stat">−85.5% tokens</span>
-      <span class="arrow">↗</span>
-      <p>Progressive tool disclosure for LLM agents. 14,108 → 2,052 tokens on a 60-skill catalogue at Top-1 0.984 / Top-3 1.000.</p>
-      <div class="tags"><span class="tag">Python</span><span class="tag">Agents</span><span class="tag">CI</span></div>
-    </a>
-    <a class="work" data-reveal href="https://github.com/asher0913/inference-lab">
-      <span class="num">03</span>
-      <h3>InferenceLab</h3>
-      <span class="stat">~79 ms P95</span>
-      <span class="arrow">↗</span>
-      <p>Async batcher and TTL/LRU semantic cache in front of vLLM / SGLang / Ollama. 80 requests at 16 concurrency collapsed into 2 backend batches, 80% cache hit.</p>
-      <div class="tags"><span class="tag">vLLM</span><span class="tag">FastAPI</span><span class="tag">MLOps</span></div>
-    </a>
-    <a class="work" data-reveal href="https://github.com/asher0913/secure-rag">
-      <span class="num">04</span>
-      <h3>SecureRAG</h3>
-      <span class="stat">Fail closed</span>
-      <span class="arrow">↗</span>
-      <p>Multi-tenant hybrid retrieval with ACL filters before ranking and live permission checks before context assembly. Recall@K, MRR, authorization-leakage tests.</p>
-      <div class="tags"><span class="tag">RAG</span><span class="tag">ACL</span><span class="tag">FastAPI</span></div>
-    </a>
-    <a class="work" data-reveal href="https://github.com/asher0913/code-task-forge">
-      <span class="num">05</span>
-      <h3>CodeTaskForge</h3>
-      <span class="stat">Agent eval</span>
-      <span class="arrow">↗</span>
-      <p>Repository profiling and a sandboxed evaluation pipeline for coding agents. Allowlists, timeouts, path-traversal defense, structured failure classes.</p>
-      <div class="tags"><span class="tag">Python</span><span class="tag">Docker</span></div>
-    </a>
-    <a class="work" data-reveal href="https://github.com/asher0913/agent-guard">
-      <span class="num">06</span>
-      <h3>AgentGuard</h3>
-      <span class="stat">Allow / deny</span>
-      <span class="arrow">↗</span>
-      <p>Pre-execution policy gateway for tool calls. Bounded risk scores, stable rule IDs, human-readable reasons. 10-case adversarial fixture, scoped as such.</p>
-      <div class="tags"><span class="tag">Security</span><span class="tag">Agents</span></div>
-    </a>
-    <a class="work" data-reveal href="https://github.com/asher0913/contactless-breathing-monitor">
-      <span class="num">07</span>
-      <h3>Breathing Monitor</h3>
-      <span class="stat">On-device</span>
-      <span class="arrow">↗</span>
-      <p>iPhone TrueDepth + Vision landmarks. Depth ROI, Gaussian filter, live SwiftUI curve. No network. XCTest and a simulator CI build.</p>
-      <div class="tags"><span class="tag">Swift</span><span class="tag">TrueDepth</span></div>
-    </a>
-    <a class="work" data-reveal href="https://github.com/asher0913/oxford-pet-classification">
-      <span class="num">08</span>
-      <h3>Oxford-IIIT Pet</h3>
-      <span class="stat">89.8% test</span>
-      <span class="arrow">↗</span>
-      <p>37-class transfer learning vs a from-scratch residual CNN at 49.7%. Grad-CAM, mixed precision, TTA, isolated official test split.</p>
-      <div class="tags"><span class="tag">PyTorch</span><span class="tag">CV</span></div>
-    </a>
-  </section>
-
-  <section id="experience">
-    <div class="sec-head">
-      <h2>Experience</h2>
-      <span class="idx">Internships</span>
-    </div>
-
-    <article class="job" data-reveal>
-      <div class="when">2026</div>
+  <main class="wrap">
+    <header class="hero">
       <div>
-        <h3>Ningbo AST Machinery Technology</h3>
-        <p class="meta">Software Engineer Intern · Ningbo · <a href="https://github.com/asher0913/multi-material-slicer">multi-material-slicer</a></p>
-        <ul>
-          <li>Shipped a cross-platform multi-material 3D-printing slicer in C++17, Qt, and OpenGL: STEP/STL assemblies, per-part materials, layer masks, G-code.</li>
-          <li>51-table MySQL CRM (107 FKs, 70 constraints) and 10 Vue/FastAPI modules. LLM pipeline: 345 faculty profiles, 1,127 grant records.</li>
-          <li>CMake, Xvfb end-to-end self-test, macOS and Windows packaging.</li>
-        </ul>
+        <div class="eyebrow">Machine learning engineer · UIUC MCS</div>
+        <h1>Models that leave the notebook.</h1>
+        <p class="lead">I work on <strong>privacy-preserving inference</strong>, <strong>on-device computer vision</strong>, and the <strong>serving path</strong> in between. Champaign, IL.</p>
+        <div class="chips">
+          <a class="chip" href="mailto:yixuan58@illinois.edu">yixuan58@illinois.edu</a>
+          <a class="chip" href="tel:+16287263686">(628) 726-3686</a>
+          <a class="chip" href="https://github.com/asher0913">GitHub</a>
+          <a class="chip" href="https://www.linkedin.com/in/yixuan-zhang-b656392b5">LinkedIn</a>
+        </div>
       </div>
-    </article>
-    <article class="job" data-reveal>
-      <div class="when">2025</div>
-      <div>
-        <h3>Zhiyang Innovation Technology</h3>
-        <p class="meta">Machine Learning Engineer Intern · Shanghai</p>
-        <ul>
-          <li>120K+ image defect-inspection pipeline. Label QA cut noise 18% and data prep from 3 days to under 1, +5.6 mAP@0.5.</li>
-          <li>YOLOv8s / YOLOv11 / Faster R-CNN / EfficientNet-B3 on 2×A100. mAP@0.5 0.74 → 0.79, recall +6.2, false positives −12%.</li>
-          <li>Jetson Orin Nano: ONNX + INT8 TensorRT FP16. 220 ms → 95 ms, 87 MB → 14 MB, &lt;0.5 mAP loss.</li>
-        </ul>
-      </div>
-    </article>
-    <article class="job" data-reveal>
-      <div class="when">2024</div>
-      <div>
-        <h3>Beijing Corefire Technology</h3>
-        <p class="meta">Software Engineer Intern · Beijing</p>
-        <ul>
-          <li>Merchant onboarding, query, and reporting for UMFintech’s acquiring platform in Spring Cloud and MySQL.</li>
-          <li>Hierarchical providers, POS/QR, terminal lifecycle, profit-sharing summaries.</li>
-        </ul>
-      </div>
-    </article>
-  </section>
+      <aside class="panel" aria-label="Highlights">
+        <div class="stat"><b>81.96%</b><span>top-1 on FaceScrub, DualPath-CEM</span></div>
+        <div class="stat"><b>2.3×</b><span>faster Jetson inference, 220→95 ms</span></div>
+        <div class="stat"><b>−85.5%</b><span>agent tokens with SkillRouter</span></div>
+      </aside>
+    </header>
 
-  <section id="labs">
-    <div class="sec-head">
-      <h2>Labs</h2>
-      <span class="idx">Public</span>
-    </div>
-    <p class="lede">Smaller repos. Linked so a hiring manager can click through without putting all of them on one page.</p>
-    <div class="labs">
-      <a href="https://github.com/asher0913/agent-trace-lab"><strong>agent-trace-lab</strong><span>Failure attribution for long-horizon agents</span></a>
-      <a href="https://github.com/asher0913/tiered-kv-cache-lab"><strong>tiered-kv-cache-lab</strong><span>Prefix reuse and KV-cache capacity</span></a>
-      <a href="https://github.com/asher0913/edge-quantization-lab"><strong>edge-quantization-lab</strong><span>INT8 sensitivity on the edge</span></a>
-      <a href="https://github.com/asher0913/ai-gateway-control-plane"><strong>ai-gateway-control-plane</strong><span>Routing, budgets, circuit breakers</span></a>
-      <a href="https://github.com/asher0913/vision-pipeline-orchestrator"><strong>vision-pipeline-orchestrator</strong><span>CPU/GPU DAG with retries and a DLQ</span></a>
-      <a href="https://github.com/asher0913/document-vlm-data-engine"><strong>document-vlm-data-engine</strong><span>Tables, figures, hard samples</span></a>
-      <a href="https://github.com/asher0913/multimodal-safety-lab"><strong>multimodal-safety-lab</strong><span>Cross-modal red team</span></a>
-      <a href="https://github.com/asher0913/graph-sop-agent"><strong>graph-sop-agent</strong><span>Cited SOP execution</span></a>
-      <a href="https://github.com/asher0913/reflective-agent-lab"><strong>reflective-agent-lab</strong><span>Verify, rollback, extract skills</span></a>
-      <a href="https://github.com/asher0913/risk-agent-workbench"><strong>risk-agent-workbench</strong><span>Evidence-grounded risk review</span></a>
-      <a href="https://github.com/asher0913/recsys-ranking-lab"><strong>recsys-ranking-lab</strong><span>Retrieval, ranking, hard negatives</span></a>
-      <a href="https://github.com/asher0913/agentops"><strong>agentops</strong><span>Incident-response agent</span></a>
-      <a href="https://github.com/asher0913/SlotCEM"><strong>SlotCEM</strong><span>Thesis regularizer, public code</span></a>
-      <a href="https://github.com/asher0913/music-emotion-regression"><strong>music-emotion-regression</strong><span>DEAM valence / arousal</span></a>
-      <a href="https://github.com/asher0913/IAMABOT"><strong>IAMABOT</strong><span>MechMania 32 strategy bot</span></a>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="sec-head">
-      <h2>About</h2>
-      <span class="idx">Now</span>
-    </div>
-    <div class="split">
-      <div class="copy" data-reveal>
-        <p>MCS student at the <strong>University of Illinois Urbana-Champaign</strong>. Previously <strong>University of Nottingham</strong>, First Class, GPA 3.88/4.00. Ranked 1st in Computer Vision and Computer Security.</p>
-        <p>I care about the last mile: a detector that actually fits on a Jetson, a split-inference path that does not fold under inversion, a serving stack that reports P95 instead of vibes.</p>
-        <p>Manuscript in preparation: Y. Zhang and J. Ren, “DDP-CEM: Dual-Path Privacy Protection for Collaborative Face Inference,” <em>Pattern Recognition</em>, 2026.</p>
+    <section id="work">
+      <div class="sec">
+        <h2>Selected work</h2>
+        <p>Public repos. The number is the point.</p>
       </div>
-      <div>
-        <article class="job" data-reveal>
-          <div class="when">2026–28</div>
-          <div>
-            <h3>UIUC</h3>
-            <p class="meta">M.S. in Computer Science · Champaign, IL</p>
+      <div class="bento">
+        <a class="card" href="https://github.com/asher0913/DualPathCEM" style="--tone:#2563eb">
+          <div class="card-top"><span>Thesis</span><span>2026</span></div>
+          <div class="metric">81.96%</div>
+          <h3>DualPath-CEM</h3>
+          <p>Split inference that beats Noise_ARL+CEM by 1.63 points and raises inversion MSE ~75%.</p>
+          <span class="go">github.com/asher0913/DualPathCEM →</span>
+        </a>
+        <a class="card" href="https://github.com/asher0913/skill-router" style="--tone:#7c3aed">
+          <div class="card-top"><span>Agents</span><span>2026</span></div>
+          <div class="metric">−85.5%</div>
+          <h3>SkillRouter</h3>
+          <p>14,108 → 2,052 tokens on 60 skills. Top-1 0.984, Top-3 1.000.</p>
+          <span class="go">Open repo →</span>
+        </a>
+        <a class="card" href="https://github.com/asher0913/inference-lab" style="--tone:#0f766e">
+          <div class="card-top"><span>Serving</span><span>2026</span></div>
+          <div class="metric">79 ms</div>
+          <h3>InferenceLab</h3>
+          <p>Async batcher + semantic cache. 80 requests, 2 backend batches, 80% hit rate.</p>
+          <span class="go">Open repo →</span>
+        </a>
+        <a class="card" href="https://github.com/asher0913/secure-rag" style="--tone:#b45309">
+          <div class="card-top"><span>Security</span><span>2025</span></div>
+          <div class="metric">ACL</div>
+          <h3>SecureRAG</h3>
+          <p>Tenant filters before ranking. Live permission checks. Fails closed on revoke.</p>
+          <span class="go">Open repo →</span>
+        </a>
+      </div>
+      <div class="list">
+        <a class="row" href="https://github.com/asher0913/code-task-forge"><b>CodeTaskForge</b><span>Sandboxed eval pipeline for coding agents</span><em>GitHub</em></a>
+        <a class="row" href="https://github.com/asher0913/agent-guard"><b>AgentGuard</b><span>Allow / deny gateway for tool calls</span><em>GitHub</em></a>
+        <a class="row" href="https://github.com/asher0913/contactless-breathing-monitor"><b>Breathing Monitor</b><span>On-device TrueDepth + Vision</span><em>GitHub</em></a>
+        <a class="row" href="https://github.com/asher0913/oxford-pet-classification"><b>Oxford-IIIT Pet</b><span>89.8% test accuracy, Grad-CAM</span><em>GitHub</em></a>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="sec">
+        <h2>Experience</h2>
+        <p>Three internships, reverse chronological.</p>
+      </div>
+      <div class="jobs">
+        <article class="job">
+          <div class="job-head">
+            <div>
+              <h3>Ningbo AST Machinery Technology</h3>
+              <p class="meta">Software Engineer Intern · <a href="https://github.com/asher0913/multi-material-slicer">multi-material-slicer</a></p>
+            </div>
+            <div class="when">May – Aug 2026 · Ningbo</div>
           </div>
+          <ul>
+            <li>Cross-platform multi-material 3D slicer in C++17 / Qt / OpenGL, with CMake and an Xvfb end-to-end test.</li>
+            <li>51-table MySQL CRM, 10 Vue/FastAPI modules, LLM pipeline: 345 faculty profiles and 1,127 grant records.</li>
+          </ul>
         </article>
-        <article class="job" data-reveal>
-          <div class="when">2022–26</div>
-          <div>
-            <h3>University of Nottingham</h3>
-            <p class="meta">B.Sc. (Hons) Computer Science, First Class</p>
-            <ul>
-              <li>Outstanding Graduate (Top 5%); Dean’s Scholarship (Top 10%); Zhejiang Provincial Scholarship (Top 5%); MCM Honorable Mention.</li>
-            </ul>
+        <article class="job">
+          <div class="job-head">
+            <div>
+              <h3>Zhiyang Innovation Technology</h3>
+              <p class="meta">Machine Learning Engineer Intern</p>
+            </div>
+            <div class="when">May – Aug 2025 · Shanghai</div>
           </div>
+          <ul>
+            <li>120K+ image defect pipeline. Label noise −18%, data prep 3 days → under 1, +5.6 mAP@0.5.</li>
+            <li>mAP@0.5 0.74 → 0.79 on 2×A100. Jetson: 220→95 ms, 87→14 MB, ONNX + INT8 TensorRT.</li>
+          </ul>
         </article>
-        <article class="job" data-reveal>
-          <div class="when">2023–24</div>
-          <div>
-            <h3>Students’ Union · Peer Mentor</h3>
-            <p class="meta">Deputy Director, 400+ event attendees. Mentored 20+ first-years in Java and data structures.</p>
+        <article class="job">
+          <div class="job-head">
+            <div>
+              <h3>Beijing Corefire Technology</h3>
+              <p class="meta">Software Engineer Intern</p>
+            </div>
+            <div class="when">May – Jul 2024 · Beijing</div>
           </div>
+          <ul>
+            <li>Merchant onboarding, query, and reporting for UMFintech in Spring Cloud and MySQL.</li>
+          </ul>
         </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="contact">
-    <div class="sec-head">
-      <h2>Contact</h2>
-      <span class="idx">Say hi</span>
-    </div>
-    <a class="mail" href="mailto:yixuan58@illinois.edu">yixuan58@illinois.edu</a>
-    <div class="contact-row">
-      <a href="tel:+16287263686">(628) 726-3686</a>
-      <a href="https://github.com/asher0913">github.com/asher0913</a>
-      <a href="https://www.linkedin.com/in/yixuan-zhang-b656392b5">LinkedIn</a>
-      <a href="Yixuan_Zhang_MLE_Resume.pdf">Résumé PDF</a>
-      <span>Champaign, IL</span>
-    </div>
-  </section>
+    <section id="labs">
+      <div class="sec">
+        <h2>Labs</h2>
+        <p>Smaller public repos.</p>
+      </div>
+      <div class="labs">
+        <a class="lab" href="https://github.com/asher0913/agent-trace-lab"><b>agent-trace-lab</b><span>Long-horizon agent failures</span></a>
+        <a class="lab" href="https://github.com/asher0913/tiered-kv-cache-lab"><b>tiered-kv-cache-lab</b><span>Prefix reuse and capacity</span></a>
+        <a class="lab" href="https://github.com/asher0913/edge-quantization-lab"><b>edge-quantization-lab</b><span>INT8 on the edge</span></a>
+        <a class="lab" href="https://github.com/asher0913/ai-gateway-control-plane"><b>ai-gateway-control-plane</b><span>Routing and budgets</span></a>
+        <a class="lab" href="https://github.com/asher0913/vision-pipeline-orchestrator"><b>vision-pipeline-orchestrator</b><span>CPU/GPU DAG + DLQ</span></a>
+        <a class="lab" href="https://github.com/asher0913/document-vlm-data-engine"><b>document-vlm-data-engine</b><span>Tables and hard samples</span></a>
+        <a class="lab" href="https://github.com/asher0913/multimodal-safety-lab"><b>multimodal-safety-lab</b><span>Cross-modal red team</span></a>
+        <a class="lab" href="https://github.com/asher0913/graph-sop-agent"><b>graph-sop-agent</b><span>Cited SOP execution</span></a>
+        <a class="lab" href="https://github.com/asher0913/reflective-agent-lab"><b>reflective-agent-lab</b><span>Verify and rollback</span></a>
+        <a class="lab" href="https://github.com/asher0913/risk-agent-workbench"><b>risk-agent-workbench</b><span>Evidence-grounded review</span></a>
+        <a class="lab" href="https://github.com/asher0913/recsys-ranking-lab"><b>recsys-ranking-lab</b><span>Retrieval and ranking</span></a>
+        <a class="lab" href="https://github.com/asher0913/SlotCEM"><b>SlotCEM</b><span>Thesis regularizer</span></a>
+        <a class="lab" href="https://github.com/asher0913/agentops"><b>agentops</b><span>Incident-response agent</span></a>
+        <a class="lab" href="https://github.com/asher0913/IAMABOT"><b>IAMABOT</b><span>MechMania 32 bot</span></a>
+        <a class="lab" href="https://github.com/asher0913/music-emotion-regression"><b>music-emotion-regression</b><span>DEAM valence / arousal</span></a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="sec">
+        <h2>About</h2>
+      </div>
+      <div class="split">
+        <div class="copy">
+          <p>MCS student at the <strong>University of Illinois Urbana-Champaign</strong>. Previously <strong>University of Nottingham</strong>, First Class, GPA 3.88/4.00. Ranked 1st in Computer Vision and Computer Security.</p>
+          <p>Outstanding Graduate (Top 5%), Dean’s Scholarship, Zhejiang Provincial Scholarship, MCM Honorable Mention.</p>
+          <p>Manuscript in preparation: Y. Zhang and J. Ren, “DDP-CEM,” <em>Pattern Recognition</em>, 2026.</p>
+        </div>
+        <div class="copy">
+          <p><strong>Students’ Union</strong>, Deputy Director — cultural season and film festival, 400+ people. Career sessions with KPMG, NIO, Xiaomi, PwC, ByteDance, Lufthansa.</p>
+          <p><strong>Peer mentor</strong> for 20+ first-years in Java and data structures. 90%+ rated helpful.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div>
+          <h2>Let’s talk.</h2>
+          <p>Email, phone, or the résumé. Champaign, IL.</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="mailto:yixuan58@illinois.edu">Email</a>
+          <a class="btn btn-ghost" href="tel:+16287263686">Call</a>
+          <a class="btn btn-ghost" href="Yixuan_Zhang_MLE_Resume.pdf">PDF</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="foot">
     <span>Yixuan Zhang</span>
-    <span>Built in HTML / CSS — no framework</span>
+    <span>asher0913.github.io</span>
   </footer>
-  <script src="app.js"></script>
 </body>
 </html>
