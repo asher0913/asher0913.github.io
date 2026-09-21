@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yixuan Zhang — Machine Learning Engineer</title>
+  <meta name="description" content="Yixuan (Asher) Zhang. Machine learning engineer working on privacy-preserving inference, on-device computer vision, and LLM serving. MCS student at UIUC.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="kicker">Machine learning engineer</p>
+      <h1>Yixuan Zhang</h1>
+      <p class="tagline">I work on privacy-preserving inference, on-device computer vision, and production LLM serving. MCS student at UIUC. Previously Nottingham CS, First Class.</p>
+      <ul class="contact">
+        <li><a href="mailto:yixuan58@illinois.edu">yixuan58@illinois.edu</a></li>
+        <li><a href="tel:+16287263686">(628) 726-3686</a></li>
+        <li><a href="https://github.com/asher0913">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/yixuan-zhang-b656392b5">LinkedIn</a></li>
+        <li><a href="Yixuan_Zhang_MLE_Resume.pdf">Résumé (PDF)</a></li>
+      </ul>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#labs">Labs</a>
+        <a href="#education">Education</a>
+      </nav>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p class="lead">I am a machine learning engineer focused on the gap between a trained model and something you can actually ship: split inference under inversion attack, edge detectors on Jetson, and the serving path around vLLM-class backends.</p>
+      <p>The one-page résumé is the recruiter document. This page is the rest of the work — internships, the thesis, and the public labs — written so a hiring manager can click through to code.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <article class="job">
+        <div class="row">
+          <h3>Ningbo AST Machinery Technology</h3>
+          <span class="when">May 2026 – Aug 2026 · Ningbo, China</span>
+        </div>
+        <p class="meta">Software Engineer Intern · <a href="https://github.com/asher0913/multi-material-slicer">multi-material-slicer</a></p>
+        <ul class="bullets">
+          <li>Shipped a cross-platform multi-material 3D-printing slicer in C++17, Qt, and OpenGL: STEP/STL assemblies, per-part materials, layer-mask generation, material-change optimization, and G-code export.</li>
+          <li>Designed a MySQL CRM schema with 51 tables, 107 foreign keys, and 70 constraints, and delivered 10 Vue/FastAPI modules for customers, opportunities, contracts, payments, reporting, RBAC, and concurrency-safe lead assignment.</li>
+          <li>Built an LLM-assisted pipeline that collected, normalized, and deduplicated industrial-robotics funding data into 345 faculty profiles and 1,127 grant records, plus automated research-fit and procurement reports.</li>
+          <li>Added CMake builds, Python regression tests, and an Xvfb-backed end-to-end self-test covering STL import, raster export, configuration, and G-code generation; published reproducible macOS and Windows packaging scripts.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row">
+          <h3>Zhiyang Innovation Technology</h3>
+          <span class="when">May 2025 – Aug 2025 · Shanghai, China</span>
+        </div>
+        <p class="meta">Machine Learning Engineer Intern</p>
+        <ul class="bullets">
+          <li>Built the training data pipeline for a computer-vision defect-inspection system, ingesting 120K+ utility-equipment images from three sources. Automated label QA and OpenCV augmentation cut label noise 18%, shortened data prep from 3 days to under 1, and added 5.6 mAP@0.5.</li>
+          <li>Trained and benchmarked YOLOv8s, YOLOv11, Faster R-CNN (ResNet-50), and EfficientNet-B3 on 2×A100. Focal loss and class weighting on a 7:1 imbalance raised mAP@0.5 from 0.74 to 0.79 and recall by 6.2 points while reducing false positives 12%.</li>
+          <li>Deployed the detector on Jetson Orin Nano with ONNX, INT8 quantization, and TensorRT FP16, cutting latency from 220 ms to 95 ms and model size from 87 MB to 14 MB at under 0.5 mAP loss; served inference through FastAPI and Docker.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row">
+          <h3>Beijing Corefire Technology</h3>
+          <span class="when">May 2024 – Jul 2024 · Beijing, China</span>
+        </div>
+        <p class="meta">Software Engineer Intern</p>
+        <ul class="bullets">
+          <li>Built merchant onboarding and query services for UMFintech’s merchant-acquiring platform using Spring Cloud, Spring Boot, JDBC, and MySQL, covering hierarchical service providers, merchants, POS/QR transactions, and terminal lifecycle workflows.</li>
+          <li>Designed a reporting service that summarized transaction volume, merchant onboarding, terminal activation, and provider profit sharing across daily, monthly, and custom date ranges.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="projects">
+      <h2>Selected projects</h2>
+      <p class="note">Flagship work first. Every repo below is public.</p>
+
+      <article class="project">
+        <div class="row">
+          <h3>DualPath-CEM</h3>
+          <span class="when">Nov 2025 – Jun 2026</span>
+        </div>
+        <p class="meta">Final-year thesis · privacy-preserving split inference · <a href="https://github.com/asher0913/DualPathCEM">DualPathCEM</a> · <a href="https://github.com/asher0913/SlotCEM">SlotCEM</a></p>
+        <ul class="bullets">
+          <li>Designed a dual-path split-inference architecture that transmits a Gaussian-protected 16×16×16 SlotCEM spatial tensor and a separately protected 256-D MobileNetV3 semantic token, then combines server-side predictions through calibrated logit fusion.</li>
+          <li>Developed a class-conditional SlotCEM regularizer that projects 4,096-D smashed features into a 64-D slot space using 8 slots, 3 refinement iterations, and a 64-entry per-class memory bank across 526 identities.</li>
+          <li>Reached 81.96% mean top-1 on a 44,139-image FaceScrub split across five adaptation seeds, 1.63 points above the published Noise_ARL+CEM reference, while increasing decoder and GAN reconstruction MSE by 75.8% and 74.9%.</li>
+        </ul>
+        <p class="note">Manuscript in preparation: Y. Zhang and J. Ren, “DDP-CEM: Dual-Path Privacy Protection for Collaborative Face Inference,” <em>Pattern Recognition</em>, 2026.</p>
+      </article>
+
+      <article class="project">
+        <div class="row">
+          <h3>SkillRouter</h3>
+          <span class="when">Sep 2026</span>
+        </div>
+        <p class="meta">Progressive tool disclosure for LLM agents · <a href="https://github.com/asher0913/skill-router">skill-router</a></p>
+        <ul class="bullets">
+          <li>Cut per-query agent context from 14,108 to 2,052 tokens (−85.5%) on a 60-skill catalogue while holding Top-1 routing accuracy at 0.984 and Top-3 at 1.000, by tiering each skill into metadata, instructions, and resources.</li>
+          <li>IDF-weighted two-stage routing reports prefilter recall as an explicit ceiling on ranker accuracy, cites matched triggers, and abstains rather than mis-routing. 26 tests green in GitHub Actions.</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <div class="row">
+          <h3>InferenceLab</h3>
+          <span class="when">Jul 2026 – Sep 2026</span>
+        </div>
+        <p class="meta">LLM serving and semantic-cache harness · <a href="https://github.com/asher0913/inference-lab">inference-lab</a></p>
+        <ul class="bullets">
+          <li>Async model-serving harness with bounded queue wait and batch size, pluggable deterministic and OpenAI-compatible backends, and an LRU/TTL semantic cache.</li>
+          <li>On a reproducible 80-request, 16-concurrency workload, traffic collapsed into 2 backend batches at 80% cache-hit rate and ~79 ms P95. Docker, pytest, GitHub Actions.</li>
+          <li>OpenAI-compatible adapter for vLLM, SGLang, Ollama, and hosted endpoints.</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <div class="row">
+          <h3>SecureRAG</h3>
+          <span class="when">Feb 2025 – Apr 2025</span>
+        </div>
+        <p class="meta">Authorization-aware retrieval · <a href="https://github.com/asher0913/secure-rag">secure-rag</a></p>
+        <ul class="bullets">
+          <li>Multi-tenant hybrid retrieval applies tenant and ACL filters before ranking and repeats live permission checks before context assembly, failing closed when access is revoked.</li>
+          <li>BM25-style lexical ranking plus a pluggable embedding score, citations, and per-query audit events. Recall@K, MRR, and authorization-leakage evaluation with cross-tenant and revocation tests.</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <div class="row">
+          <h3>CodeTaskForge</h3>
+          <span class="when">May 2025 – Jul 2025</span>
+        </div>
+        <p class="meta">Coding-agent evaluation service · <a href="https://github.com/asher0913/code-task-forge">code-task-forge</a></p>
+        <ul class="bullets">
+          <li>Repository profiling and validation for coding agents: languages, manifests, source files, and tests, exposed as one structured pipeline through CLI and FastAPI.</li>
+          <li>Shell-free command allowlists, sanitized environments, timeouts, log caps, and path-traversal defenses; classified dependency, build, test, timeout, policy, and no-test failures.</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <div class="row">
+          <h3>AgentGuard</h3>
+          <span class="when">Aug 2025 – Oct 2025</span>
+        </div>
+        <p class="meta">Policy enforcement for AI tool calls · <a href="https://github.com/asher0913/agent-guard">agent-guard</a></p>
+        <ul class="bullets">
+          <li>Pre-execution policy gateway that returns allow, approval-required, or deny with bounded risk scores, stable rule identifiers, and human-readable reasons.</li>
+          <li>Rules for destructive shell actions, broad filesystem targets, sensitive-data exfiltration, prompt injection, and missing scopes. 100% precision and recall with 0% false positives on a checked-in 10-case adversarial fixture, scoped to those cases.</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <div class="row">
+          <h3>Contactless Breathing Monitor</h3>
+          <span class="when">Aug 2024 – Oct 2024</span>
+        </div>
+        <p class="meta">On-device iOS · <a href="https://github.com/asher0913/contactless-breathing-monitor">contactless-breathing-monitor</a></p>
+        <ul class="bullets">
+          <li>Synchronizes front-camera video and TrueDepth output with AVCaptureMultiCamSession, then uses Vision shoulder landmarks to derive a chest region of interest.</li>
+          <li>Depth buffers go through ROI cropping, Gaussian filtering, invalid-pixel rejection, and a weighted moving average before a live SwiftUI respiratory-motion curve. No network client; XCTest plus a GitHub Actions simulator build.</li>
+        </ul>
+      </article>
+
+      <article class="project">
+        <div class="row">
+          <h3>Oxford-IIIT Pet Classification</h3>
+          <span class="when">Nov 2024 – Jan 2025</span>
+        </div>
+        <p class="meta">Transfer learning · <a href="https://github.com/asher0913/oxford-pet-classification">oxford-pet-classification</a></p>
+        <ul class="bullets">
+          <li>37-class pipeline with a deterministic train/validation split, isolated official test evaluation, transfer-learning and custom-CNN tracks, mixed precision, checkpointing, and batch inference.</li>
+          <li>Fine-tuned ResNet-18 with differential learning rates, cosine scheduling, EMA, and TTA to 89.8% test accuracy; 49.7% from-scratch residual CNN as the controlled baseline. Grad-CAM, confusion matrices, per-class metrics.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="labs">
+      <h2>Other public labs</h2>
+      <p class="note">Smaller, focused repositories. Linked so a reader can go to the code without putting all of them on the résumé.</p>
+      <ul class="labs">
+        <li><a href="https://github.com/asher0913/agent-trace-lab"><strong>agent-trace-lab</strong></a><div class="desc">Observability and failure attribution for long-horizon LLM agents.</div></li>
+        <li><a href="https://github.com/asher0913/tiered-kv-cache-lab"><strong>tiered-kv-cache-lab</strong></a><div class="desc">Three-tier KV-cache simulation and prefix-reuse analysis for LLM serving.</div></li>
+        <li><a href="https://github.com/asher0913/edge-quantization-lab"><strong>edge-quantization-lab</strong></a><div class="desc">Mixed-precision INT8 sensitivity and edge-inference trade-offs.</div></li>
+        <li><a href="https://github.com/asher0913/ai-gateway-control-plane"><strong>ai-gateway-control-plane</strong></a><div class="desc">Routing, rate limits, budgets, circuit breakers, prompt versioning.</div></li>
+        <li><a href="https://github.com/asher0913/vision-pipeline-orchestrator"><strong>vision-pipeline-orchestrator</strong></a><div class="desc">Backpressure-aware CPU/GPU DAG scheduler with retries and a DLQ.</div></li>
+        <li><a href="https://github.com/asher0913/document-vlm-data-engine"><strong>document-vlm-data-engine</strong></a><div class="desc">Figure matching, table validation, and hard-sample mining for document AI.</div></li>
+        <li><a href="https://github.com/asher0913/multimodal-safety-lab"><strong>multimodal-safety-lab</strong></a><div class="desc">Cross-modal red-team benchmark with attack–defense evaluation.</div></li>
+        <li><a href="https://github.com/asher0913/graph-sop-agent"><strong>graph-sop-agent</strong></a><div class="desc">Hybrid graph and document retrieval for cited SOP execution.</div></li>
+        <li><a href="https://github.com/asher0913/reflective-agent-lab"><strong>reflective-agent-lab</strong></a><div class="desc">Gated reflection, verification, rollback, and skill extraction.</div></li>
+        <li><a href="https://github.com/asher0913/risk-agent-workbench"><strong>risk-agent-workbench</strong></a><div class="desc">Evidence-grounded, versioned synthetic risk-review agent.</div></li>
+        <li><a href="https://github.com/asher0913/recsys-ranking-lab"><strong>recsys-ranking-lab</strong></a><div class="desc">Multi-stage retrieval and ranking with hard negatives.</div></li>
+        <li><a href="https://github.com/asher0913/agentops"><strong>agentops</strong></a><div class="desc">Observable incident-response agent with deterministic recovery.</div></li>
+        <li><a href="https://github.com/asher0913/music-emotion-regression"><strong>music-emotion-regression</strong></a><div class="desc">DEAM valence/arousal regression with eight model families.</div></li>
+        <li><a href="https://github.com/asher0913/cifar10-ml-benchmark"><strong>cifar10-ml-benchmark</strong></a><div class="desc">PCA, GPU MLP, and Random Forest CIFAR-10 comparison.</div></li>
+        <li><a href="https://github.com/asher0913/IAMABOT"><strong>IAMABOT</strong></a><div class="desc">MechMania 32 strategy bot with replay-driven regression.</div></li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <article class="job">
+        <div class="row">
+          <h3>University of Illinois Urbana-Champaign</h3>
+          <span class="when">Aug 2026 – May 2028</span>
+        </div>
+        <p class="meta">M.S. in Computer Science · Champaign, IL</p>
+      </article>
+      <article class="job">
+        <div class="row">
+          <h3>University of Nottingham</h3>
+          <span class="when">Sep 2022 – Jun 2026</span>
+        </div>
+        <p class="meta">B.Sc. (Hons) Computer Science, First Class · GPA 3.88/4.00 · Nottingham, UK</p>
+        <ul class="bullets">
+          <li>Ranked 1st in Computer Vision and Computer Security.</li>
+          <li>Outstanding Graduate (Top 5%); Dean’s Scholarship (Top 10%); Zhejiang Provincial Government Scholarship (Top 5%); MCM Honorable Mention (2024).</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="leadership">
+      <h2>Leadership</h2>
+      <article class="job">
+        <div class="row">
+          <h3>Students’ Union, University of Nottingham</h3>
+          <span class="when">May 2023 – Apr 2024</span>
+        </div>
+        <p class="meta">Deputy Director · Nottingham, UK</p>
+        <ul class="bullets">
+          <li>Organized a multilingual cultural season and film festival with 400+ participants.</li>
+          <li>Partnered with KPMG, NIO, Xiaomi, PwC, ByteDance, and Lufthansa on career sessions, each engaging 200+ students.</li>
+        </ul>
+      </article>
+      <article class="job">
+        <div class="row">
+          <h3>School of Computer Science, University of Nottingham</h3>
+          <span class="when">Sep 2023 – Jan 2024</span>
+        </div>
+        <p class="meta">Peer Mentor</p>
+        <ul class="bullets">
+          <li>Mentored 20+ first-year students on Java, recursion, debugging, data structures, complexity, and Git. Helpful ratings from more than 90% of mentees.</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer>
+      <p>Yixuan (Asher) Zhang · Champaign, IL · <a href="mailto:yixuan58@illinois.edu">yixuan58@illinois.edu</a> · <a href="tel:+16287263686">(628) 726-3686</a></p>
+      <p>Static HTML and CSS. No framework. Hosted on GitHub Pages.</p>
+    </footer>
+  </div>
+</body>
+</html>
