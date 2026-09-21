@@ -3,197 +3,656 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yixuan Zhang — Machine Learning Engineer</title>
-  <meta name="description" content="Yixuan Zhang. Machine learning engineer. Privacy-preserving inference, on-device vision, LLM serving. MCS at UIUC.">
-  <meta name="theme-color" content="#f6f5f2">
+  <title>Yixuan Zhang — ML Engineer</title>
+  <meta name="description" content="Yixuan (Asher) Zhang. Machine learning engineer: private split inference, edge vision, LLM serving. M.S. Computer Science at UIUC.">
+  <meta name="author" content="Yixuan Zhang">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yixuan Zhang — ML Engineer">
+  <meta property="og:description" content="Private split inference, edge vision, LLM serving. Research, internships, open source.">
+  <meta property="og:url" content="https://asher0913.github.io/">
+  <meta name="theme-color" content="#08090a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Fragment+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect rx='12' fill='%23141413' width='64' height='64'/><text x='10' y='44' font-size='28' font-family='Arial' fill='white' font-weight='700'>YZ</text></svg>">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%2308090a'/><path d='M14 44 32 34 50 44 32 54Z' fill='none' stroke='%23cdf564' stroke-width='3'/><path d='M14 32 32 22 50 32 32 42Z' fill='none' stroke='%23f4f5f6' stroke-width='3' opacity='.55'/><path d='M14 20 32 10 50 20 32 30Z' fill='none' stroke='%23f4f5f6' stroke-width='3' opacity='.3'/></svg>">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Yixuan Zhang","alternateName":"Asher Zhang","jobTitle":"Machine Learning Engineer","email":"mailto:yixuan58@illinois.edu","url":"https://asher0913.github.io/","affiliation":"University of Illinois Urbana-Champaign","alumniOf":"University of Nottingham","sameAs":["https://github.com/asher0913","https://www.linkedin.com/in/yixuan-zhang-b656392b5"]}
+  </script>
 </head>
 <body>
-  <a class="skip" href="#work">Skip to work</a>
-  <nav class="nav">
-    <a class="logo" href="#">Yixuan Zhang</a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="bar">
+    <div class="bar-in">
+      <a class="mark" href="#top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16.5 12 12l9 4.5-9 4.5Z"/><path d="M3 12 12 7.5 21 12 12 16.5Z" opacity=".55"/><path d="M3 7.5 12 3l9 4.5L12 12Z" opacity=".3"/></svg>
+        <span>Yixuan Zhang</span>
+      </a>
+      <nav class="bar-nav" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="bar-right">
+        <span class="clock mono" aria-label="Local time in Champaign"><span class="pulse" aria-hidden="true"></span><span data-clock>Champaign</span></span>
+        <button class="kbd-btn" type="button" data-open-palette aria-label="Open command menu"><kbd>⌘</kbd><kbd>K</kbd></button>
+      </div>
     </div>
-    <a class="btn" href="Yixuan_Zhang_MLE_Resume.pdf">Résumé</a>
-  </nav>
+  </header>
 
-  <main class="wrap">
-    <header class="hero">
-      <div>
-        <div class="eyebrow">Machine learning engineer · UIUC MCS</div>
-        <h1>Models that leave the notebook.</h1>
-        <p class="lead">I work on <strong>privacy-preserving inference</strong>, <strong>on-device computer vision</strong>, and the <strong>serving path</strong> in between. Champaign, IL.</p>
-        <div class="chips">
-          <a class="chip" href="mailto:yixuan58@illinois.edu">yixuan58@illinois.edu</a>
-          <a class="chip" href="tel:+16287263686">(628) 726-3686</a>
-          <a class="chip" href="https://github.com/asher0913">GitHub</a>
-          <a class="chip" href="https://www.linkedin.com/in/yixuan-zhang-b656392b5">LinkedIn</a>
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero wrap" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow mono"><span class="dot" aria-hidden="true"></span>Open to Summer 2027 · SWE / MLE internships</p>
+        <h1>
+          <span class="h-strong">Yixuan Zhang builds ML systems that hold up outside the notebook.</span>
+          <span class="h-soft">Private split inference, edge vision and LLM serving.</span>
+        </h1>
+        <p class="hero-meta mono"><span><i>now</i>M.S. Computer Science · UIUC ’28</span><span><i>before</i>B.Sc. Computer Science · Nottingham, First Class</span></p>
+        <div class="hero-actions">
+          <a class="btn btn-signal" href="mailto:yixuan58@illinois.edu">Email me</a>
+          <a class="btn btn-line" href="Yixuan_Zhang_MLE_Resume.pdf">Résumé <span class="mono">PDF</span></a>
+          <a class="txt-link" href="https://github.com/asher0913">GitHub ↗</a>
+          <a class="txt-link" href="https://www.linkedin.com/in/yixuan-zhang-b656392b5">LinkedIn ↗</a>
         </div>
       </div>
-      <aside class="panel" aria-label="Highlights">
-        <div class="stat"><b>81.96%</b><span>top-1 on FaceScrub, DualPath-CEM</span></div>
-        <div class="stat"><b>2.3×</b><span>faster Jetson inference, 220→95 ms</span></div>
-        <div class="stat"><b>−85.5%</b><span>agent tokens with SkillRouter</span></div>
-      </aside>
-    </header>
 
-    <section id="work">
-      <div class="sec">
-        <h2>Selected work</h2>
-        <p>Public repos. The number is the point.</p>
-      </div>
-      <div class="bento">
-        <a class="card" href="https://github.com/asher0913/DualPathCEM" style="--tone:#2563eb">
-          <div class="card-top"><span>Thesis</span><span>2026</span></div>
-          <div class="metric">81.96%</div>
-          <h3>DualPath-CEM</h3>
-          <p>Split inference that beats Noise_ARL+CEM by 1.63 points and raises inversion MSE ~75%.</p>
-          <span class="go">github.com/asher0913/DualPathCEM →</span>
-        </a>
-        <a class="card" href="https://github.com/asher0913/skill-router" style="--tone:#7c3aed">
-          <div class="card-top"><span>Agents</span><span>2026</span></div>
-          <div class="metric">−85.5%</div>
-          <h3>SkillRouter</h3>
-          <p>14,108 → 2,052 tokens on 60 skills. Top-1 0.984, Top-3 1.000.</p>
-          <span class="go">Open repo →</span>
-        </a>
-        <a class="card" href="https://github.com/asher0913/inference-lab" style="--tone:#0f766e">
-          <div class="card-top"><span>Serving</span><span>2026</span></div>
-          <div class="metric">79 ms</div>
-          <h3>InferenceLab</h3>
-          <p>Async batcher + semantic cache. 80 requests, 2 backend batches, 80% hit rate.</p>
-          <span class="go">Open repo →</span>
-        </a>
-        <a class="card" href="https://github.com/asher0913/secure-rag" style="--tone:#b45309">
-          <div class="card-top"><span>Security</span><span>2025</span></div>
-          <div class="metric">ACL</div>
-          <h3>SecureRAG</h3>
-          <p>Tenant filters before ranking. Live permission checks. Fails closed on revoke.</p>
-          <span class="go">Open repo →</span>
-        </a>
-      </div>
-      <div class="list">
-        <a class="row" href="https://github.com/asher0913/code-task-forge"><b>CodeTaskForge</b><span>Sandboxed eval pipeline for coding agents</span><em>GitHub</em></a>
-        <a class="row" href="https://github.com/asher0913/agent-guard"><b>AgentGuard</b><span>Allow / deny gateway for tool calls</span><em>GitHub</em></a>
-        <a class="row" href="https://github.com/asher0913/contactless-breathing-monitor"><b>Breathing Monitor</b><span>On-device TrueDepth + Vision</span><em>GitHub</em></a>
-        <a class="row" href="https://github.com/asher0913/oxford-pet-classification"><b>Oxford-IIIT Pet</b><span>89.8% test accuracy, Grad-CAM</span><em>GitHub</em></a>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="sec">
-        <h2>Experience</h2>
-        <p>Three internships, reverse chronological.</p>
-      </div>
-      <div class="jobs">
-        <article class="job">
-          <div class="job-head">
-            <div>
-              <h3>Ningbo AST Machinery Technology</h3>
-              <p class="meta">Software Engineer Intern · <a href="https://github.com/asher0913/multi-material-slicer">multi-material-slicer</a></p>
-            </div>
-            <div class="when">May – Aug 2026 · Ningbo</div>
+      <figure class="hero-fig" aria-labelledby="fig0-cap">
+        <div class="fig-frame">
+          <span class="fig-corner tl" aria-hidden="true"></span><span class="fig-corner tr" aria-hidden="true"></span>
+          <span class="fig-corner bl" aria-hidden="true"></span><span class="fig-corner br" aria-hidden="true"></span>
+          <canvas id="tensor" width="520" height="520" role="img" aria-label="Isometric 16 by 16 by 16 feature tensor with animated Gaussian noise."></canvas>
+          <div class="fig-readout mono" aria-live="off">
+            <span>σ <b data-sigma>0.31</b></span>
+            <span>shape <b>16×16×16</b></span>
           </div>
-          <ul>
-            <li>Cross-platform multi-material 3D slicer in C++17 / Qt / OpenGL, with CMake and an Xvfb end-to-end test.</li>
-            <li>51-table MySQL CRM, 10 Vue/FastAPI modules, LLM pipeline: 345 faculty profiles and 1,127 grant records.</li>
-          </ul>
-        </article>
-        <article class="job">
-          <div class="job-head">
-            <div>
-              <h3>Zhiyang Innovation Technology</h3>
-              <p class="meta">Machine Learning Engineer Intern</p>
-            </div>
-            <div class="when">May – Aug 2025 · Shanghai</div>
+        </div>
+        <figcaption id="fig0-cap" class="mono"><span>FIG. 0</span> The client-side tensor from my thesis, with Gaussian noise before it leaves the device. Move across it to change σ.</figcaption>
+      </figure>
+
+      <dl class="spec">
+        <div><dt class="mono">Top-1 · FaceScrub</dt><dd>81.96<small>%</small></dd><p>+1.63 pts over the published CEM defence</p></div>
+        <div><dt class="mono">Jetson Orin Nano</dt><dd>220→95<small>ms</small></dd><p>2.3× faster, 6.2× smaller, &lt;0.5 mAP loss</p></div>
+        <div><dt class="mono">Agent context</dt><dd>−85.5<small>%</small></dd><p>tokens per query at 0.984 top-1 routing</p></div>
+        <div><dt class="mono">B.Sc. Nottingham</dt><dd>3.9<small>/4.00</small></dd><p>First Class, ranked 1st in CV and Security</p></div>
+      </dl>
+    </section>
+
+    <!-- Selected work -->
+    <section class="sec wrap" id="work" aria-labelledby="work-h">
+      <header class="sec-head">
+        <h2 id="work-h">Selected work <span class="count mono">10</span></h2>
+        <p class="mono sec-note">Click a row for details</p>
+      </header>
+
+      <div class="works">
+        <details class="work" data-reveal>
+          <summary>
+            <span class="w-idx mono">01</span>
+            <span class="w-fig" aria-hidden="true">
+              <svg viewBox="0 0 160 96"><path class="ln" d="M12 48h22"/><path class="ln" d="M34 48c14 0 14-22 28-22h26"/><path class="ln" d="M34 48c14 0 14 22 28 22h26"/><rect class="bx" x="62" y="18" width="26" height="16" rx="2"/><rect class="bx" x="62" y="62" width="26" height="16" rx="2"/><path class="ln hl dash" d="M88 26c16 0 16 22 32 22h16"/><path class="ln hl dash" d="M88 70c16 0 16-22 32-22"/><circle class="nd hl" cx="140" cy="48" r="4"/><path class="tk" d="M95 14l3 3m4-3-3 3m4 0 3-3M95 80l3-3m4 3-3-3m4 0 3 3"/></svg>
+            </span>
+            <span class="w-main"><span class="w-title">DualPath-CEM</span><span class="w-kind mono">Research</span><span class="w-desc">Split inference that resists model inversion without giving up accuracy.</span></span>
+            <span class="w-result"><b class="mono">81.96%</b><span>top-1 · +75.8% attack MSE</span></span>
+            <span class="w-meta mono"><span>PyTorch</span><span>2025–26</span></span>
+            <span class="w-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="w-body">
+            <ul>
+              <li>Two client paths: a Gaussian-protected 16×16×16 SlotCEM tensor carries the privacy burden and a 256-D MobileNetV3 token carries utility. The server fuses them with calibrated logits.</li>
+              <li>On a 44,139-image FaceScrub split (526 identities, 5 seeds), top-1 rose 1.63 points over the published Noise_ARL+CEM reference while decoder and GAN reconstruction MSE rose 75.8% and 74.9%.</li>
+              <li>Manuscript in preparation for <em>Pattern Recognition</em> with Prof. Jianfeng Ren. Full write-up in <a href="#research">Research</a>.</li>
+            </ul>
+            <a class="txt-link" href="https://github.com/asher0913/DualPathCEM">github.com/asher0913/DualPathCEM ↗</a>
           </div>
-          <ul>
-            <li>120K+ image defect pipeline. Label noise −18%, data prep 3 days → under 1, +5.6 mAP@0.5.</li>
-            <li>mAP@0.5 0.74 → 0.79 on 2×A100. Jetson: 220→95 ms, 87→14 MB, ONNX + INT8 TensorRT.</li>
-          </ul>
-        </article>
-        <article class="job">
-          <div class="job-head">
-            <div>
-              <h3>Beijing Corefire Technology</h3>
-              <p class="meta">Software Engineer Intern</p>
-            </div>
-            <div class="when">May – Jul 2024 · Beijing</div>
+        </details>
+
+        <details class="work" data-reveal>
+          <summary>
+            <span class="w-idx mono">02</span>
+            <span class="w-fig" aria-hidden="true">
+              <svg viewBox="0 0 160 96"><g class="tk"><path d="M14 14h18M14 22h18M14 30h18M14 38h18M14 46h18M14 54h18M14 62h18M14 70h18M14 78h18"/></g><path class="ln" d="M36 14 78 40M36 78 78 56M36 46h42"/><rect class="bx" x="78" y="36" width="10" height="24" rx="2"/><path class="ln" d="M88 42h14M88 48h14M88 54h14"/><rect class="bx" x="104" y="36" width="42" height="7" rx="1.5"/><rect class="bx hl" x="104" y="45" width="42" height="7" rx="1.5"/><rect class="bx" x="104" y="54" width="42" height="7" rx="1.5"/><text class="lbl" x="104" y="76">60 → 3</text></svg>
+            </span>
+            <span class="w-main"><span class="w-title">SkillRouter</span><span class="w-kind mono">LLM agents</span><span class="w-desc">Progressive tool disclosure for large skill catalogues.</span></span>
+            <span class="w-result"><b class="mono">−85.5%</b><span>tokens · top-1 0.984</span></span>
+            <span class="w-meta mono"><span>Python</span><span>Sep 2026</span></span>
+            <span class="w-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="w-body">
+            <ul>
+              <li>Three-tier registry: routing reads only metadata, and full instructions load only for the skills actually selected.</li>
+              <li>IDF-weighted lexical prefilter protects recall, then a ranker selects top-k. On a 60-skill catalogue, context fell from 14,108 to 2,052 tokens per query at top-1 0.984 and top-3 1.000.</li>
+              <li>Content fingerprints and a CI admission gate block catalogue changes that add trigger conflicts or drop routing accuracy. 26 tests in GitHub Actions.</li>
+            </ul>
+            <a class="txt-link" href="https://github.com/asher0913/skill-router">github.com/asher0913/skill-router ↗</a>
           </div>
+        </details>
+
+        <details class="work" data-reveal>
+          <summary>
+            <span class="w-idx mono">03</span>
+            <span class="w-fig" aria-hidden="true">
+              <svg viewBox="0 0 160 96"><g class="nd-s"><circle cx="16" cy="22" r="2.5"/><circle cx="24" cy="34" r="2.5"/><circle cx="14" cy="46" r="2.5"/><circle cx="26" cy="54" r="2.5"/><circle cx="16" cy="66" r="2.5"/><circle cx="24" cy="76" r="2.5"/></g><path class="ln dash" d="M32 48h18"/><rect class="bx" x="50" y="28" width="30" height="40" rx="2"/><path class="tk" d="M56 36h18M56 44h18M56 52h18M56 60h18"/><path class="ln" d="M80 40h18M80 56h18"/><rect class="bx hl" x="98" y="32" width="18" height="16" rx="2"/><rect class="bx hl" x="98" y="50" width="18" height="16" rx="2"/><path class="ln" d="M116 48h14"/><rect class="bx" x="130" y="34" width="18" height="28" rx="2"/></svg>
+            </span>
+            <span class="w-main"><span class="w-title">InferenceLab</span><span class="w-kind mono">LLM serving</span><span class="w-desc">Dynamic batching and a semantic cache in front of vLLM, SGLang or Ollama.</span></span>
+            <span class="w-result"><b class="mono">80→2</b><span>requests → backend batches</span></span>
+            <span class="w-meta mono"><span>asyncio · vLLM</span><span>Jul–Sep 2026</span></span>
+            <span class="w-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="w-body">
+            <ul>
+              <li>Async dynamic batcher with batch-size and queue-wait bounds, plus a TTL/LRU semantic cache with a configurable similarity threshold.</li>
+              <li>An 80-request, 16-concurrency workload collapsed into 2 backend batches at an 80% cache-hit rate and ~79 ms P95 on the deterministic backend.</li>
+              <li>Swappable OpenAI-compatible backend, so the same harness runs against real vLLM, SGLang or Ollama servers.</li>
+            </ul>
+            <a class="txt-link" href="https://github.com/asher0913/inference-lab">github.com/asher0913/inference-lab ↗</a>
+          </div>
+        </details>
+
+        <details class="work" data-reveal>
+          <summary>
+            <span class="w-idx mono">04</span>
+            <span class="w-fig" aria-hidden="true">
+              <svg viewBox="0 0 160 96"><rect class="bx" x="12" y="16" width="22" height="28" rx="2"/><rect class="bx" x="12" y="52" width="22" height="28" rx="2"/><rect class="bx" x="40" y="34" width="22" height="28" rx="2"/><path class="tk" d="M17 24h12M17 30h12M17 60h12M17 66h12M45 42h12M45 48h12"/><path class="ln hl" d="M76 12v72"/><path class="ln" d="M34 30h42M34 66h26"/><path class="ln warn" d="M62 62l8 8m0-8-8 8"/><path class="ln" d="M76 30h20"/><path class="tk" d="M100 26h44M100 36h36M100 46h40M100 56h28"/><path class="ln" d="M96 22v38"/></svg>
+            </span>
+            <span class="w-main"><span class="w-title">SecureRAG</span><span class="w-kind mono">Retrieval security</span><span class="w-desc">Multi-tenant hybrid retrieval that checks permissions before ranking.</span></span>
+            <span class="w-result"><b class="mono">ACL first</b><span>fails closed on revoke</span></span>
+            <span class="w-meta mono"><span>FastAPI · RAG</span><span>Feb–Apr 2025</span></span>
+            <span class="w-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="w-body">
+            <ul>
+              <li>Tenant and ACL filters run before hybrid ranking, and permissions are re-checked live before context assembly, so revoked text never reaches the model.</li>
+              <li>BM25-style lexical retrieval with a swappable embedding interface, plus Recall@K, MRR and authorization-leakage regression tests.</li>
+              <li>Citation and denial audit events on every query.</li>
+            </ul>
+            <a class="txt-link" href="https://github.com/asher0913/secure-rag">github.com/asher0913/secure-rag ↗</a>
+          </div>
+        </details>
+
+        <details class="work" data-reveal>
+          <summary>
+            <span class="w-idx mono">05</span>
+            <span class="w-fig" aria-hidden="true">
+              <svg viewBox="0 0 160 96"><path class="bx" d="M40 74 80 62l40 12-40 12Z"/><path class="bx" d="M40 62 80 50l40 12-40 12Z"/><path class="bx hl" d="M40 50 80 38l40 12-40 12Z"/><path class="bx" d="M40 38 80 26l40 12-40 12Z"/><path class="bx" d="M40 26 80 14l40 12-40 12Z"/><path class="tk" d="M128 26h14M128 50h14M128 74h14"/><text class="lbl" x="130" y="46">z</text></svg>
+            </span>
+            <span class="w-main"><span class="w-title">Multi-Material Resin Slicer</span><span class="w-kind mono">C++ desktop</span><span class="w-desc">STEP/STL assemblies to per-material masks and G-code.</span></span>
+            <span class="w-result"><b class="mono">C++17</b><span>Qt · OpenGL · headless CI test</span></span>
+            <span class="w-meta mono"><span>Internship</span><span>May–Aug 2026</span></span>
+            <span class="w-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="w-body">
+            <ul>
+              <li>Imports STL and STEP assemblies through OpenCascade while preserving nested transforms, with per-part material assignment and an OpenGL VBO preview.</li>
+              <li>Rasterises per-material PNG masks in a background worker with cancellation and timeouts, plans tank changes layer by layer, and writes merged exposures plus G-code.</li>
+              <li>A headless <span class="mono">--selftest</span> runs the full import-to-G-code path under Xvfb in Ubuntu CI. Packaged for macOS and Windows.</li>
+            </ul>
+            <a class="txt-link" href="https://github.com/asher0913/multi-material-slicer">github.com/asher0913/multi-material-slicer ↗</a>
+          </div>
+        </details>
+
+        <details class="work" data-reveal>
+          <summary>
+            <span class="w-idx mono">06</span>
+            <span class="w-fig" aria-hidden="true">
+              <svg viewBox="0 0 160 96"><path class="ln" d="M12 48h44"/><path class="bx" d="M56 22h12v52H56z"/><path class="ln hl" d="M68 48c20 0 20-24 44-24h24"/><path class="ln dash" d="M68 48h68"/><path class="ln warn" d="M68 48c20 0 20 24 44 24h6"/><path class="ln warn" d="M122 66l10 10m0-10-10 10"/><circle class="nd hl" cx="140" cy="24" r="3.5"/><text class="lbl" x="12" y="40">tool call</text></svg>
+            </span>
+            <span class="w-main"><span class="w-title">AgentGuard</span><span class="w-kind mono">Agent safety</span><span class="w-desc">A policy gateway between an LLM and the tools it wants to call.</span></span>
+            <span class="w-result"><b class="mono">100%</b><span>precision / recall on fixture</span></span>
+            <span class="w-meta mono"><span>FastAPI</span><span>Aug–Oct 2025</span></span>
+            <span class="w-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="w-body">
+            <ul>
+              <li>Every proposed tool call returns allow, require-approval or deny, with a bounded risk score, readable reasons and stable rule IDs for audit.</li>
+              <li>Covers destructive shell commands, broad filesystem targets, credential exfiltration, prompt-injection propagation and multi-step escalation.</li>
+              <li>100% precision and recall on the checked-in adversarial fixture.</li>
+            </ul>
+            <a class="txt-link" href="https://github.com/asher0913/agent-guard">github.com/asher0913/agent-guard ↗</a>
+          </div>
+        </details>
+
+        <details class="work" data-reveal>
+          <summary>
+            <span class="w-idx mono">07</span>
+            <span class="w-fig" aria-hidden="true">
+              <svg viewBox="0 0 160 96"><rect class="bx" x="14" y="14" width="92" height="68" rx="4"/><path class="tk" d="M14 26h92"/><circle class="nd-s" cx="22" cy="20" r="1.8"/><circle class="nd-s" cx="29" cy="20" r="1.8"/><path class="ln" d="M22 38l5 4-5 4"/><path class="tk" d="M32 46h40M22 56h60M22 66h48"/><path class="ln hl" d="M118 30l5 5 9-10"/><path class="ln warn" d="M119 48l10 10m0-10-10 10"/><path class="ln hl" d="M118 72l5 5 9-10"/></svg>
+            </span>
+            <span class="w-main"><span class="w-title">CodeTaskForge</span><span class="w-kind mono">Agent evaluation</span><span class="w-desc">The execution and evidence layer for coding agents.</span></span>
+            <span class="w-result"><b class="mono">5 classes</b><span>dependency · build · test · timeout · policy</span></span>
+            <span class="w-meta mono"><span>Python · Docker</span><span>May–Jul 2025</span></span>
+            <span class="w-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="w-body">
+            <ul>
+              <li>Profiles a repository, then runs allowlisted, shell-free commands with timeouts, sanitised environments and path-traversal defences.</li>
+              <li>Classifies each failure and emits a deterministic JSON report that downstream evaluation can consume. CLI and FastAPI share one pipeline.</li>
+              <li>Docker and CI regression coverage.</li>
+            </ul>
+            <a class="txt-link" href="https://github.com/asher0913/code-task-forge">github.com/asher0913/code-task-forge ↗</a>
+          </div>
+        </details>
+
+        <details class="work" data-reveal>
+          <summary>
+            <span class="w-idx mono">08</span>
+            <span class="w-fig" aria-hidden="true">
+              <svg viewBox="0 0 160 96"><path class="tk dash" d="M10 48h140"/><path class="ln hl" d="M10 48c10 0 10-26 20-26s10 26 20 26 10 26 20 26 10-26 20-26 10 26 20 26 10 26 20 26 10-26 20-26"/><g class="nd-s"><circle cx="30" cy="22" r="2"/><circle cx="70" cy="74" r="2"/><circle cx="110" cy="74" r="2"/><circle cx="150" cy="22" r="2"/></g></svg>
+            </span>
+            <span class="w-main"><span class="w-title">Contactless Breathing Monitor</span><span class="w-kind mono">iOS · on-device</span><span class="w-desc">TrueDepth and Vision pose landmarks turn chest depth into a live breathing curve.</span></span>
+            <span class="w-result"><b class="mono">0 bytes</b><span>leave the device</span></span>
+            <span class="w-meta mono"><span>Swift</span><span>Aug–Oct 2024</span></span>
+            <span class="w-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="w-body">
+            <ul>
+              <li>AVCaptureMultiCamSession synchronises front-camera video with TrueDepth depth, and Vision shoulder landmarks define the chest region of interest.</li>
+              <li>Gaussian filtering and a weighted moving average turn the cropped depth signal into a respiratory curve plotted live in SwiftUI.</li>
+              <li>No network client and no persistence. Grew out of a Software Engineering group project I led under Prof. Matthew Pike.</li>
+            </ul>
+            <a class="txt-link" href="https://github.com/asher0913/contactless-breathing-monitor">github.com/asher0913/contactless-breathing-monitor ↗</a>
+          </div>
+        </details>
+
+        <details class="work" data-reveal>
+          <summary>
+            <span class="w-idx mono">09</span>
+            <span class="w-fig" aria-hidden="true">
+              <svg viewBox="0 0 160 96"><defs><radialGradient id="cam"><stop offset="0" stop-color="#cdf564" stop-opacity=".55"/><stop offset="1" stop-color="#cdf564" stop-opacity="0"/></radialGradient></defs><g class="grid-s"><path d="M40 12v72M52 12v72M64 12v72M76 12v72M88 12v72M100 12v72M112 12v72M28 24h96M28 36h96M28 48h96M28 60h96M28 72h96"/></g><rect class="bx" x="28" y="12" width="96" height="72"/><circle cx="84" cy="42" r="26" fill="url(#cam)"/><circle class="nd hl" cx="84" cy="42" r="2.5"/></svg>
+            </span>
+            <span class="w-main"><span class="w-title">Oxford-IIIT Pet</span><span class="w-kind mono">Fine-grained vision</span><span class="w-desc">37-breed classification with transfer learning, EMA, TTA and a hand-written Grad-CAM.</span></span>
+            <span class="w-result"><b class="mono">89.8%</b><span>test accuracy, ResNet-18</span></span>
+            <span class="w-meta mono"><span>PyTorch</span><span>Nov 2024–Jan 2025</span></span>
+            <span class="w-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="w-body">
+            <ul>
+              <li>Fine-tuned ResNet-18 with mixed precision, cosine scheduling, EMA and horizontal-flip TTA to 89.8% test accuracy on 37 classes.</li>
+              <li>A from-scratch SE-ResNet reached 49.7% as the controlled baseline, with ablations, confusion matrices and Grad-CAM overlays.</li>
+            </ul>
+            <a class="txt-link" href="https://github.com/asher0913/oxford-pet-classification">github.com/asher0913/oxford-pet-classification ↗</a>
+          </div>
+        </details>
+
+        <details class="work" data-reveal>
+          <summary>
+            <span class="w-idx mono">10</span>
+            <span class="w-fig" aria-hidden="true">
+              <svg viewBox="0 0 160 96"><g class="grid-s"><path d="M28 12v72M44 12v72M60 12v72M76 12v72M92 12v72M108 12v72M124 12v72M12 28h128M12 44h128M12 60h128M12 76h128"/></g><rect class="bx" x="12" y="12" width="128" height="72"/><path class="ln hl" d="M20 48h40l16-16h56"/><rect class="bx hl" x="72" y="28" width="8" height="8"/><g class="nd-s"><circle cx="36" cy="24" r="2"/><circle cx="28" cy="68" r="2"/><circle cx="44" cy="60" r="2"/></g><g class="nd-w"><circle cx="116" cy="64" r="2"/><circle cx="124" cy="20" r="2"/><circle cx="108" cy="72" r="2"/></g></svg>
+            </span>
+            <span class="w-main"><span class="w-title">IAMABOT</span><span class="w-kind mono">MechMania 32</span><span class="w-desc">A 24-hour AI contest bot built from the game engine’s Rust source.</span></span>
+            <span class="w-result"><b class="mono">7th→3rd</b><span>on the live leaderboard</span></span>
+            <span class="w-meta mono"><span>Python</span><span>2026</span></span>
+            <span class="w-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="w-body">
+            <ul>
+              <li>Commands a fleet of up to 32 bots on a walled 32×32 map. Every rule the bot relies on was read from the engine’s Rust source rather than the prose rules.</li>
+              <li>Engine-exact fire control, payload control and a replay-driven regression arena for testing strategy changes.</li>
+            </ul>
+            <a class="txt-link" href="https://github.com/asher0913/IAMABOT">github.com/asher0913/IAMABOT ↗</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="labs" data-reveal>
+        <header class="labs-head">
+          <h3>Labs and coursework <span class="count mono">18</span></h3>
+          <p>Laptop-scale reference implementations of production problems, built for reproducible evaluation.</p>
+        </header>
+        <div class="labs-table" role="list">
+          <a role="listitem" href="https://github.com/asher0913/tiered-kv-cache-lab"><span class="mono">tiered-kv-cache-lab</span><span>GPU → CPU → NVMe KV cache with prefix reuse and capacity planning</span><em class="mono">serving</em></a>
+          <a role="listitem" href="https://github.com/asher0913/ai-gateway-control-plane"><span class="mono">ai-gateway-control-plane</span><span>Model routing, token buckets, budgets, circuit breakers, prompt versions</span><em class="mono">serving</em></a>
+          <a role="listitem" href="https://github.com/asher0913/edge-quantization-lab"><span class="mono">edge-quantization-lab</span><span>Per-layer INT8 sensitivity and mixed precision under an error budget</span><em class="mono">edge</em></a>
+          <a role="listitem" href="https://github.com/asher0913/vision-pipeline-orchestrator"><span class="mono">vision-pipeline-orchestrator</span><span>Backpressure-aware CPU/GPU DAG scheduler with retries and a DLQ</span><em class="mono">systems</em></a>
+          <a role="listitem" href="https://github.com/asher0913/agentops"><span class="mono">agentops</span><span>Incident-response agent with deterministic recovery and replayable traces</span><em class="mono">agents</em></a>
+          <a role="listitem" href="https://github.com/asher0913/agent-trace-lab"><span class="mono">agent-trace-lab</span><span>Process-level anti-pattern detection and failure attribution</span><em class="mono">agents</em></a>
+          <a role="listitem" href="https://github.com/asher0913/reflective-agent-lab"><span class="mono">reflective-agent-lab</span><span>Gated reflection, verification, rollback and skill extraction</span><em class="mono">agents</em></a>
+          <a role="listitem" href="https://github.com/asher0913/graph-sop-agent"><span class="mono">graph-sop-agent</span><span>Hybrid graph and BM25 retrieval for cited SOP execution</span><em class="mono">agents</em></a>
+          <a role="listitem" href="https://github.com/asher0913/risk-agent-workbench"><span class="mono">risk-agent-workbench</span><span>Evidence-grounded risk review that abstains when evidence is missing</span><em class="mono">agents</em></a>
+          <a role="listitem" href="https://github.com/asher0913/document-vlm-data-engine"><span class="mono">document-vlm-data-engine</span><span>Figure matching, table validation, cross-page QA and hard samples</span><em class="mono">data</em></a>
+          <a role="listitem" href="https://github.com/asher0913/multimodal-safety-lab"><span class="mono">multimodal-safety-lab</span><span>Cross-modal red-team benchmark with safety–utility metrics</span><em class="mono">safety</em></a>
+          <a role="listitem" href="https://github.com/asher0913/recsys-ranking-lab"><span class="mono">recsys-ranking-lab</span><span>Multi-stage retrieval and ranking with hard negatives</span><em class="mono">ranking</em></a>
+          <a role="listitem" href="https://github.com/asher0913/music-emotion-regression"><span class="mono">music-emotion-regression</span><span>DEAM valence and arousal across eight model families, R² 0.604</span><em class="mono">ml</em></a>
+          <a role="listitem" href="https://github.com/asher0913/cifar10-ml-benchmark"><span class="mono">cifar10-ml-benchmark</span><span>PCA features, an MLP and a Random Forest under matched CV</span><em class="mono">ml</em></a>
+          <a role="listitem" href="https://github.com/asher0913/bin-packing-metaheuristics"><span class="mono">bin-packing-metaheuristics</span><span>Best-fit decreasing, simulated annealing, variable-neighbourhood search</span><em class="mono">algorithms</em></a>
+          <a role="listitem" href="https://github.com/asher0913/javafx-platformer"><span class="mono">javafx-platformer</span><span>Java 21 game built on MVC, commands, state machines and JUnit</span><em class="mono">software</em></a>
+          <a role="listitem" href="https://github.com/asher0913/treasure-hunt-pathfinding"><span class="mono">treasure-hunt-pathfinding</span><span>A* and BFS shortest-path hints in a Swing game</span><em class="mono">algorithms</em></a>
+          <a role="listitem" href="https://github.com/asher0913/flask-music-library"><span class="mono">flask-music-library</span><span>Flask and SQLite catalogue with validated, transactional imports</span><em class="mono">software</em></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section class="sec wrap" id="research" aria-labelledby="research-h">
+      <header class="sec-head">
+        <h2 id="research-h">Research</h2>
+        <p class="mono sec-note">Privacy in collaborative inference</p>
+      </header>
+
+      <article class="paper" data-reveal>
+        <div class="paper-top">
+          <span class="venue mono">Pattern Recognition</span>
+          <span class="mono paper-status">Manuscript in preparation · 2026</span>
+        </div>
+        <h3>DDP-CEM: Dual-Path Privacy Protection for Collaborative Face Inference</h3>
+        <p class="authors"><b>Yixuan Zhang</b>, Jianfeng Ren</p>
+
+        <div class="paper-grid">
+          <p class="abstract">A split model sends an intermediate representation from a trusted client to an untrusted server. Strong noise makes that tensor hard to invert but also removes what the server needs for recognition. DualPath-CEM separates the two jobs: a Gaussian-protected spatial path carries the privacy burden, a compact semantic token carries utility, and the server fuses two classifiers with calibrated logits. The attacker is assumed to see <em>both</em> released tensors.</p>
+          <dl class="paper-nums">
+            <div><dt class="mono">Top-1</dt><dd class="mono">81.96%</dd></div>
+            <div><dt class="mono">Δ vs CEM</dt><dd class="mono sig">+1.63 pts</dd></div>
+            <div><dt class="mono">Decoder MSE</dt><dd class="mono sig">+75.8%</dd></div>
+            <div><dt class="mono">GAN MSE</dt><dd class="mono sig">+74.9%</dd></div>
+          </dl>
+        </div>
+
+        <figure class="arch">
+          <div class="arch-scroll">
+            <svg viewBox="0 0 760 280" role="img" aria-labelledby="arch-t arch-d">
+              <title id="arch-t">DualPath-CEM architecture</title>
+              <desc id="arch-d">A private image feeds two client encoders. The SlotCEM client produces a 16 by 16 by 16 tensor with Gaussian noise sigma 0.31; the MobileNetV3-Large semantic client produces a 256-dimensional token with noise sigma 0.10. Both cross the trust boundary to an untrusted server where a spatial head and a token classifier are fused with calibrated logits into an identity prediction. An inversion attacker on the server observes both tensors.</desc>
+              <defs>
+                <marker id="ah" viewBox="0 0 8 8" refX="7.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 8 4 0 8z" class="a-head"/></marker>
+                <marker id="ahw" viewBox="0 0 8 8" refX="7.5" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 8 4 0 8z" class="a-head-w"/></marker>
+              </defs>
+              <text x="16" y="22" class="a-zone">CLIENT · TRUSTED</text>
+              <text x="470" y="22" class="a-zone">SERVER · UNTRUSTED</text>
+              <line x1="446" y1="10" x2="446" y2="270" class="a-bound"/>
+
+              <path d="M116 140C134 140 132 66 150 66" class="a-edge" marker-end="url(#ah)"/>
+              <path d="M116 140C134 140 132 214 150 214" class="a-edge" marker-end="url(#ah)"/>
+              <path d="M306 66H330M306 214H330" class="a-edge"/>
+              <path d="M426 66H470" class="a-edge" marker-end="url(#ah)"/>
+              <path d="M426 214H470" class="a-edge" marker-end="url(#ah)"/>
+              <path d="M598 66C616 66 612 132 628 134" class="a-edge" marker-end="url(#ah)"/>
+              <path d="M598 214C616 214 612 148 628 146" class="a-edge" marker-end="url(#ah)"/>
+              <path d="M116 140C134 140 132 66 150 66M306 66H470M598 66C616 66 612 132 628 134" class="a-flow"/>
+              <path d="M116 140C134 140 132 214 150 214M306 214H470M598 214C616 214 612 148 628 146" class="a-flow"/>
+              <path d="M438 66C454 66 452 140 470 140" class="a-atk" marker-end="url(#ahw)"/>
+              <path d="M438 214C454 214 452 140 470 140" class="a-atk" marker-end="url(#ahw)"/>
+
+              <rect x="16" y="116" width="100" height="48" rx="6" class="a-box"/>
+              <text x="66" y="137" class="a-t">Private image</text><text x="66" y="153" class="a-s">FaceScrub 64×64</text>
+              <rect x="150" y="38" width="156" height="56" rx="6" class="a-box"/>
+              <text x="228" y="61" class="a-t">SlotCEM client</text><text x="228" y="79" class="a-s">VGG11-BN · 16×16×16</text>
+              <rect x="150" y="186" width="156" height="56" rx="6" class="a-box"/>
+              <text x="228" y="209" class="a-t">Semantic client</text><text x="228" y="227" class="a-s">MobileNetV3-L · 256-D</text>
+              <rect x="330" y="52" width="96" height="28" rx="14" class="a-noise"/><text x="378" y="70" class="a-n">σ = 0.31</text>
+              <rect x="330" y="200" width="96" height="28" rx="14" class="a-noise"/><text x="378" y="218" class="a-n">σ = 0.10</text>
+              <rect x="470" y="38" width="128" height="56" rx="6" class="a-box"/>
+              <text x="534" y="61" class="a-t">Spatial server</text><text x="534" y="79" class="a-s">classifier head</text>
+              <rect x="470" y="116" width="128" height="48" rx="6" class="a-atk-box"/>
+              <text x="534" y="137" class="a-t a-w">Inversion attacker</text><text x="534" y="153" class="a-s">sees both tensors</text>
+              <rect x="470" y="186" width="128" height="56" rx="6" class="a-box"/>
+              <text x="534" y="209" class="a-t">Token classifier</text><text x="534" y="227" class="a-s">256-D → logits</text>
+              <rect x="628" y="112" width="116" height="56" rx="6" class="a-box a-strong"/>
+              <text x="686" y="135" class="a-t">Calibrated fusion</text><text x="686" y="153" class="a-s">→ identity</text>
+            </svg>
+          </div>
+          <figcaption class="mono"><span>FIG. 1</span> Two released tensors, one untrusted server. SlotCEM shapes the spatial encoder during training only; no prototypes are transmitted.</figcaption>
+        </figure>
+
+        <div class="table-wrap">
+          <table class="bench">
+            <caption class="mono"><span>TABLE 1</span> FaceScrub, 526 identities, 44,139 images, mean of 5 seeds. Higher reconstruction MSE means a worse attack.</caption>
+            <thead>
+              <tr><th scope="col">Method</th><th scope="col">Top-1 ↑</th><th scope="col">Decoder MSE ↑ <span>inference</span></th><th scope="col">GAN MSE ↑ <span>inference</span></th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Noise_ARL + CEM <span class="mono src">published</span></th>
+                <td><span class="bar" style="--v:.8033"></span><span class="mono">80.33%</span></td>
+                <td><span class="bar" style="--v:.569"></span><span class="mono">0.0211</span></td>
+                <td><span class="bar" style="--v:.572"></span><span class="mono">0.0231</span></td>
+              </tr>
+              <tr class="ours">
+                <th scope="row">DualPath-CEM <span class="mono src">this work</span></th>
+                <td><span class="bar" style="--v:.8196"></span><span class="mono">81.96%</span></td>
+                <td><span class="bar" style="--v:1"></span><span class="mono">0.0371</span></td>
+                <td><span class="bar" style="--v:1"></span><span class="mono">0.0404</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <details class="scope">
+          <summary class="mono">Evidence boundary</summary>
+          <p>The reference row is the published CEM result, not a local reproduction. All five adaptations start from the same frozen SlotCEM foundation, so they are not independent end-to-end runs. The completed snapshot is FaceScrub-only. The evidence package covers 70 main attack runs, 15 repeated utility evaluations, 96 supplementary attack runs, a matched-capacity control and a ResNet-18 control.</p>
+        </details>
+
+        <div class="paper-links">
+          <a class="txt-link" href="https://github.com/asher0913/DualPathCEM">Code and audited results ↗</a>
+        </div>
+      </article>
+
+      <article class="paper paper-sub" data-reveal>
+        <div class="paper-top">
+          <span class="venue mono">B.Sc. dissertation</span>
+          <span class="mono paper-status">First Class · Oct 2025 – Jun 2026 · Advisor Prof. Jianfeng Ren</span>
+        </div>
+        <h3>SlotCEM: slot-attention conditional entropy regularisation against model inversion</h3>
+        <p class="abstract">Replaces the Gaussian-mixture estimator in CEM with a training-only, class-conditioned Slot Attention module. 4,096-D smashed features are projected to 64-D, grouped by class with a bounded per-class memory bank, and eight slots model multimodal structure under a soft geometric-variance loss. Structured channel pruning keeps the edge-side VGG11-BN client light.</p>
+        <div class="table-wrap">
+          <table class="bench compact">
+            <caption class="mono"><span>TABLE 2</span> FaceScrub, 530 identities at 64×64, cut layer 4, 16-channel bottleneck. MSE rises 29.8% for a 0.84-point accuracy cost; the dual-path design removes that cost.</caption>
+            <thead><tr><th scope="col">Method</th><th scope="col">Top-1 ↑</th><th scope="col">MIA MSE ↑</th><th scope="col">SSIM ↓</th><th scope="col">PSNR ↓</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">No defence <span class="mono src">sanity</span></th><td class="mono">89.43%</td><td class="mono">0.00067</td><td class="mono">0.949</td><td class="mono">31.76</td></tr>
+              <tr><th scope="row">Noise_ARL + CEM <span class="mono src">published</span></th><td class="mono">80.33%</td><td class="mono">0.0211</td><td class="mono">—</td><td class="mono">—</td></tr>
+              <tr class="ours"><th scope="row">SlotCEM</th><td class="mono">79.49%</td><td class="mono">0.0274</td><td class="mono">0.518</td><td class="mono">15.63</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="paper-links"><a class="txt-link" href="https://github.com/asher0913/SlotCEM">Dissertation code and report ↗</a></div>
+      </article>
+    </section>
+
+    <!-- Experience -->
+    <section class="sec wrap" id="experience" aria-labelledby="exp-h">
+      <header class="sec-head">
+        <h2 id="exp-h">Experience</h2>
+        <p class="mono sec-note">4 internships · 2 research assistantships</p>
+      </header>
+
+      <ol class="xp">
+        <li class="xp-row" data-reveal>
+          <div class="xp-when mono"><span>2026</span><span>May – Aug</span></div>
+          <div class="xp-rail" aria-hidden="true"><span class="xp-mono">AST</span></div>
+          <div class="xp-body">
+            <h3>Ningbo AST Machinery Technology <span class="xp-loc mono">Ningbo</span></h3>
+            <p class="xp-role">Software Engineer Intern</p>
+            <ul>
+              <li>Shipped a cross-platform multi-material resin slicer in C++17, Qt and OpenGL, with CMake builds and a headless Xvfb end-to-end self-test.</li>
+              <li>Added GPU render caches, shared mesh storage, cancellable background export and malformed-geometry validation. Packaged macOS and Windows builds.</li>
+              <li>Designed a <span class="m">51</span>-table MySQL CRM with <span class="m">107</span> foreign keys and <span class="m">70</span> constraints, and shipped <span class="m">10</span> Vue/FastAPI modules with role-based access and concurrency-safe lead assignment.</li>
+              <li>Built an LLM research pipeline that produced <span class="m">345</span> faculty profiles and <span class="m">1,127</span> deduplicated grant records.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="xp-row" data-reveal>
+          <div class="xp-when mono"><span>2025</span><span>May – Aug</span></div>
+          <div class="xp-rail" aria-hidden="true"><span class="xp-mono">ZY</span></div>
+          <div class="xp-body">
+            <h3>Zhiyang Innovation Technology <span class="xp-loc mono">Shanghai</span></h3>
+            <p class="xp-role">Machine Learning Engineer Intern</p>
+            <ul>
+              <li>Cut Jetson Orin Nano latency <span class="m">220 → 95 ms</span> and model size <span class="m">87 → 14 MB</span> at under 0.5 mAP loss, exporting to ONNX and serving TensorRT engines behind FastAPI and Docker.</li>
+              <li>Raised mAP@0.5 <span class="m">0.74 → 0.79</span> and recall <span class="m">+6.2</span> pts while cutting false positives <span class="m">12%</span> on a 7:1 imbalanced defect set, benchmarking YOLOv8s, YOLOv11, Faster R-CNN and EfficientNet-B3 on 2×A100.</li>
+              <li>Built the training pipeline for <span class="m">120K+</span> images from three sources. Automated label QA and augmentation cut label noise <span class="m">18%</span>, data prep from 3 days to under 1, and added <span class="m">5.6</span> mAP@0.5.</li>
+              <li>Clustered false positives with K-means to surface long-tail failure modes from daily inference logs for retraining.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="xp-row" data-reveal>
+          <div class="xp-when mono"><span>2024–25</span><span>Sep – Jul</span></div>
+          <div class="xp-rail" aria-hidden="true"><span class="xp-mono">UN</span></div>
+          <div class="xp-body">
+            <h3>University of Nottingham, Sport Department <span class="xp-loc mono">Ningbo</span></h3>
+            <p class="xp-role">Data Analyst Intern</p>
+            <ul>
+              <li>Wrote Python workflows that clean and aggregate event participation and feedback data, surfacing participation, satisfaction and engagement trends.</li>
+              <li>Built an Excel work-hour system with formulas and automation scripts that tracks attendance, flags incomplete records and generates standard reports.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="xp-row" data-reveal>
+          <div class="xp-when mono"><span>2024</span><span>May – Jul</span></div>
+          <div class="xp-rail" aria-hidden="true"><span class="xp-mono">CF</span></div>
+          <div class="xp-body">
+            <h3>Beijing Corefire Technology <span class="xp-loc mono">Beijing</span></h3>
+            <p class="xp-role">Software Engineer Intern</p>
+            <ul>
+              <li>Built merchant onboarding, query and reporting services for UMFintech’s acquiring platform in Spring Cloud, Spring Boot and MySQL, covering POS and QR transactions, terminal lifecycle and profit sharing.</li>
+              <li>Implemented phone/password and SMS-code login with Redis-backed session tokens, plus self-service merchant registration.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="xp-row xp-minor" data-reveal>
+          <div class="xp-when mono"><span>2025</span><span>Jan – Jun</span></div>
+          <div class="xp-rail" aria-hidden="true"><span class="xp-mono">RA</span></div>
+          <div class="xp-body">
+            <h3>Research Assistant, medical image analysis <span class="xp-loc mono">Nottingham</span></h3>
+            <p class="xp-role">Advisor Dr. Kian Ming Lim</p>
+            <ul><li>Trained ResNet and Vision Transformer classifiers on MedMNIST with OpenCV augmentation, then distilled a lightweight student model.</li></ul>
+          </div>
+        </li>
+        <li class="xp-row xp-minor" data-reveal>
+          <div class="xp-when mono"><span>2024</span><span>Feb – Apr</span></div>
+          <div class="xp-rail" aria-hidden="true"><span class="xp-mono">RA</span></div>
+          <div class="xp-body">
+            <h3>Research Assistant, news sentiment for trading <span class="xp-loc mono">Nottingham</span></h3>
+            <p class="xp-role">Advisor Dr. Tianxiang Cui</p>
+            <ul><li>Aligned <span class="m">100K+</span> articles from 20+ sources, fine-tuned BERT-Large into a daily sentiment index, and backtested a PPO trading agent on the CSI 300.</li></ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Education -->
+    <section class="sec wrap" id="education" aria-labelledby="edu-h">
+      <header class="sec-head">
+        <h2 id="edu-h">Education</h2>
+        <p class="mono sec-note">And honours</p>
+      </header>
+
+      <div class="edu">
+        <div class="edu-list">
+          <div class="edu-row" data-reveal>
+            <p class="mono edu-when">2026 – 2028</p>
+            <h3>University of Illinois Urbana-Champaign</h3>
+            <p class="edu-deg">M.S. in Computer Science</p>
+            <p class="edu-note">Machine Learning Systems, Distributed Systems, Advanced Data Management, Advanced Topics in NLP, Advanced Operating Systems, Advanced Computer Security.</p>
+          </div>
+          <div class="edu-row" data-reveal>
+            <p class="mono edu-when">2022 – 2026</p>
+            <h3>University of Nottingham <span class="xp-loc mono">Ningbo China campus</span></h3>
+            <p class="edu-deg">B.Sc. (Hons) Computer Science · First Class · GPA 3.9 / 4.00</p>
+            <p class="edu-note">Ranked 1st in Computer Vision and in Computer Security. 4.0 in Operating Systems and Concurrency, Algorithms and Data Structures, Machine Learning, AI Methods, Databases, Systems and Architecture. Advisors Prof. Jianfeng Ren and Prof. Matthew Pike.</p>
+          </div>
+          <div class="edu-row" data-reveal>
+            <p class="mono edu-when">2024</p>
+            <h3>Aarhus University <span class="xp-loc mono">Denmark</span></h3>
+            <p class="edu-deg">Summer school · Software Design Using C++</p>
+            <p class="edu-note">Taught by Bjarne Stroustrup, the creator of C++.</p>
+          </div>
+        </div>
+
+        <div class="honors" data-reveal>
+          <h3 class="mono honors-h">Honours <span>10</span></h3>
           <ul>
-            <li>Merchant onboarding, query, and reporting for UMFintech in Spring Cloud and MySQL.</li>
+            <li><span>Outstanding Graduate of Zhejiang Province</span><span class="mono">2026</span></li>
+            <li><span>Outstanding Graduate, top 5%</span><span class="mono">2026</span></li>
+            <li><span>Dean’s Scholarship, top 10%</span><span class="mono">2025</span></li>
+            <li><span>Outstanding Student, top 5%</span><span class="mono">2025</span></li>
+            <li><span>Zhejiang Provincial Government Scholarship, top 5%</span><span class="mono">2024</span></li>
+            <li><span>MCM Honorable Mention</span><span class="mono">2024</span></li>
+            <li><span>MathorCup Big Data Challenge, Second Prize</span><span class="mono">2023</span></li>
+            <li><span>National English Competition, Second Prize</span><span class="mono">2023</span></li>
+            <li><span>Nottingham Advantage Award</span><span class="mono">2023</span></li>
+            <li><span>Xinghuo Freshman Debate Tournament, Champion</span><span class="mono">2023</span></li>
           </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="labs">
-      <div class="sec">
-        <h2>Labs</h2>
-        <p>Smaller public repos.</p>
-      </div>
-      <div class="labs">
-        <a class="lab" href="https://github.com/asher0913/agent-trace-lab"><b>agent-trace-lab</b><span>Long-horizon agent failures</span></a>
-        <a class="lab" href="https://github.com/asher0913/tiered-kv-cache-lab"><b>tiered-kv-cache-lab</b><span>Prefix reuse and capacity</span></a>
-        <a class="lab" href="https://github.com/asher0913/edge-quantization-lab"><b>edge-quantization-lab</b><span>INT8 on the edge</span></a>
-        <a class="lab" href="https://github.com/asher0913/ai-gateway-control-plane"><b>ai-gateway-control-plane</b><span>Routing and budgets</span></a>
-        <a class="lab" href="https://github.com/asher0913/vision-pipeline-orchestrator"><b>vision-pipeline-orchestrator</b><span>CPU/GPU DAG + DLQ</span></a>
-        <a class="lab" href="https://github.com/asher0913/document-vlm-data-engine"><b>document-vlm-data-engine</b><span>Tables and hard samples</span></a>
-        <a class="lab" href="https://github.com/asher0913/multimodal-safety-lab"><b>multimodal-safety-lab</b><span>Cross-modal red team</span></a>
-        <a class="lab" href="https://github.com/asher0913/graph-sop-agent"><b>graph-sop-agent</b><span>Cited SOP execution</span></a>
-        <a class="lab" href="https://github.com/asher0913/reflective-agent-lab"><b>reflective-agent-lab</b><span>Verify and rollback</span></a>
-        <a class="lab" href="https://github.com/asher0913/risk-agent-workbench"><b>risk-agent-workbench</b><span>Evidence-grounded review</span></a>
-        <a class="lab" href="https://github.com/asher0913/recsys-ranking-lab"><b>recsys-ranking-lab</b><span>Retrieval and ranking</span></a>
-        <a class="lab" href="https://github.com/asher0913/SlotCEM"><b>SlotCEM</b><span>Thesis regularizer</span></a>
-        <a class="lab" href="https://github.com/asher0913/agentops"><b>agentops</b><span>Incident-response agent</span></a>
-        <a class="lab" href="https://github.com/asher0913/IAMABOT"><b>IAMABOT</b><span>MechMania 32 bot</span></a>
-        <a class="lab" href="https://github.com/asher0913/music-emotion-regression"><b>music-emotion-regression</b><span>DEAM valence / arousal</span></a>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="sec">
-        <h2>About</h2>
-      </div>
-      <div class="split">
-        <div class="copy">
-          <p>MCS student at the <strong>University of Illinois Urbana-Champaign</strong>. Previously <strong>University of Nottingham</strong>, First Class, GPA 3.88/4.00. Ranked 1st in Computer Vision and Computer Security.</p>
-          <p>Outstanding Graduate (Top 5%), Dean’s Scholarship, Zhejiang Provincial Scholarship, MCM Honorable Mention.</p>
-          <p>Manuscript in preparation: Y. Zhang and J. Ren, “DDP-CEM,” <em>Pattern Recognition</em>, 2026.</p>
-        </div>
-        <div class="copy">
-          <p><strong>Students’ Union</strong>, Deputy Director — cultural season and film festival, 400+ people. Career sessions with KPMG, NIO, Xiaomi, PwC, ByteDance, Lufthansa.</p>
-          <p><strong>Peer mentor</strong> for 20+ first-years in Java and data structures. 90%+ rated helpful.</p>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="contact">
-        <div>
-          <h2>Let’s talk.</h2>
-          <p>Email, phone, or the résumé. Champaign, IL.</p>
+    <!-- About -->
+    <section class="sec wrap" id="about" aria-labelledby="about-h">
+      <header class="sec-head">
+        <h2 id="about-h">About</h2>
+        <p class="mono sec-note">Stack, languages, and life outside code</p>
+      </header>
+
+      <div class="about">
+        <dl class="stack" data-reveal>
+          <div><dt class="mono">Languages</dt><dd>Python, C++, Java, SQL, TypeScript, JavaScript, Go, Swift</dd></div>
+          <div><dt class="mono">ML</dt><dd>PyTorch, Hugging Face Transformers, scikit-learn, OpenCV, YOLO, ViT, LoRA, RAG</dd></div>
+          <div><dt class="mono">Inference</dt><dd>ONNX, TensorRT, vLLM, Jetson, INT8 quantisation, batching, caching</dd></div>
+          <div><dt class="mono">Systems</dt><dd>FastAPI, Spring Boot, Docker, Kubernetes, MySQL, Redis, MLflow, GitHub Actions, AWS, GCP, Linux</dd></div>
+          <div><dt class="mono">Desktop · iOS</dt><dd>Qt, OpenGL, CMake, SwiftUI, AVFoundation, Vision</dd></div>
+          <div><dt class="mono">Spoken</dt><dd>Chinese, native · English, IELTS 7.5 · Japanese, JLPT N3</dd></div>
+        </dl>
+
+        <div class="life" data-reveal>
+          <div>
+            <h3 class="mono">Leadership</h3>
+            <p><b>President, Nottingham Debate Union</b> <span class="mono">2023–24</span>Designed a Nottingham Advantage Award course on British Parliamentary debate and led 5 instructors teaching 200+ students.</p>
+            <p><b>Deputy Director, Students’ Union</b> <span class="mono">2023–24</span>Ran a 400-person cultural season and career sessions with KPMG, PwC, ByteDance, NIO, Xiaomi and Lufthansa.</p>
+            <p><b>Peer Mentor, Computer Science</b> <span class="mono">2023–24</span>Taught 20+ first-years Java, data structures and Git. 90%+ rated it helpful.</p>
+          </div>
+          <div>
+            <h3 class="mono">Service and campus</h3>
+            <p><b>Peer Listener, Mental Health Centre</b> <span class="mono">2024</span>Supported 13 students through peer listening.</p>
+            <p><b>Chinese Teaching Volunteer, Confucius Institute</b> <span class="mono">2022–23</span>Weekly one-to-one lessons for international students.</p>
+            <p><b>Young Volunteers Association · Media Centre · Chinese Debate Society · Chinese Corner</b> <span class="mono">2022–23</span>Recruited 80+ volunteers, wrote for the official WeChat account, and competed in debate.</p>
+          </div>
         </div>
-        <div class="actions">
-          <a class="btn" href="mailto:yixuan58@illinois.edu">Email</a>
-          <a class="btn btn-ghost" href="tel:+16287263686">Call</a>
-          <a class="btn btn-ghost" href="Yixuan_Zhang_MLE_Resume.pdf">PDF</a>
-        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact wrap" id="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h"><span class="h-strong">Working on ML systems, inference or infrastructure?</span> <span class="h-soft">I’d like to hear about it.</span></h2>
+      <div class="contact-row">
+        <a class="mail mono" href="mailto:yixuan58@illinois.edu">yixuan58@illinois.edu</a>
+        <button class="copy mono" type="button" data-copy="yixuan58@illinois.edu">Copy</button>
+      </div>
+      <div class="contact-links mono">
+        <a href="https://github.com/asher0913">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/yixuan-zhang-b656392b5">LinkedIn ↗</a>
+        <a href="Yixuan_Zhang_MLE_Resume.pdf">Résumé ↓</a>
+        <a href="tel:+16287263686">+1 628 726 3686</a>
       </div>
     </section>
   </main>
 
-  <footer class="foot">
-    <span>Yixuan Zhang</span>
-    <span>asher0913.github.io</span>
+  <footer class="foot wrap mono">
+    <span>© 2026 Yixuan Zhang</span>
+    <span>Updated 2026-09-21 · static HTML, no trackers</span>
+    <button type="button" data-open-palette>Press <kbd>⌘</kbd><kbd>K</kbd></button>
   </footer>
+
+  <!-- Command palette -->
+  <div class="palette" id="palette" hidden>
+    <div class="palette-scrim" data-close-palette></div>
+    <div class="palette-box" role="dialog" aria-modal="true" aria-label="Command menu">
+      <div class="palette-input">
+        <span class="mono" aria-hidden="true">›</span>
+        <input type="text" placeholder="Jump to a section, project or link…" aria-label="Search" autocomplete="off" spellcheck="false">
+        <kbd>esc</kbd>
+      </div>
+      <ul class="palette-list" role="listbox"></ul>
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
 </body>
 </html>
