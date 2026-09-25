@@ -129,7 +129,8 @@
             <ul>
               <li>Three-tier registry: routing reads only metadata, and full instructions load only for the skills actually selected.</li>
               <li>IDF-weighted lexical prefilter protects recall, then a ranker selects top-k. On a 60-skill catalogue, context fell from 14,108 to 2,052 tokens per query at top-1 0.984 and top-3 1.000.</li>
-              <li>Content fingerprints and a CI admission gate block catalogue changes that add trigger conflicts or drop routing accuracy. 26 tests in GitHub Actions.</li>
+              <li>Also measured on held-out paraphrases that avoid every trigger phrase: lexical routing drops to 0.21 top-1, and an optional MiniLM stage tuned only on the dev set brings it to 0.56 while declining 85% of out-of-domain questions.</li>
+              <li>Content fingerprints and a CI admission gate block catalogue changes that add trigger conflicts or drop routing accuracy. 30 tests in GitHub Actions.</li>
             </ul>
             <a class="txt-link" href="https://github.com/asher0913/skill-router">github.com/asher0913/skill-router ↗</a>
           </div>
@@ -141,15 +142,16 @@
             <span class="w-fig" aria-hidden="true">
               <svg viewBox="0 0 160 96"><g class="nd-s"><circle cx="16" cy="22" r="2.5"/><circle cx="24" cy="34" r="2.5"/><circle cx="14" cy="46" r="2.5"/><circle cx="26" cy="54" r="2.5"/><circle cx="16" cy="66" r="2.5"/><circle cx="24" cy="76" r="2.5"/></g><path class="ln dash" d="M32 48h18"/><rect class="bx" x="50" y="28" width="30" height="40" rx="2"/><path class="tk" d="M56 36h18M56 44h18M56 52h18M56 60h18"/><path class="ln" d="M80 40h18M80 56h18"/><rect class="bx hl" x="98" y="32" width="18" height="16" rx="2"/><rect class="bx hl" x="98" y="50" width="18" height="16" rx="2"/><path class="ln" d="M116 48h14"/><rect class="bx" x="130" y="34" width="18" height="28" rx="2"/></svg>
             </span>
-            <span class="w-main"><span class="w-title">InferenceLab</span><span class="w-kind mono">LLM serving</span><span class="w-desc">Dynamic batching and a semantic cache in front of vLLM, SGLang or Ollama.</span></span>
-            <span class="w-result"><b class="mono">80→2</b><span>requests → backend batches</span></span>
+            <span class="w-main"><span class="w-title">InferenceLab</span><span class="w-kind mono">LLM serving</span><span class="w-desc">Dynamic batching, request coalescing and a semantic cache in front of vLLM, SGLang or Ollama.</span></span>
+            <span class="w-result"><b class="mono">16→3</b><span>backend generations</span></span>
             <span class="w-meta mono"><span>asyncio · vLLM</span><span>Sep–Oct 2024</span></span>
             <span class="w-chev" aria-hidden="true"></span>
           </summary>
           <div class="w-body">
             <ul>
-              <li>Async dynamic batcher with batch-size and queue-wait bounds, plus a TTL/LRU semantic cache with a configurable similarity threshold.</li>
-              <li>An 80-request, 16-concurrency workload collapsed into 2 backend batches at an 80% cache-hit rate and ~79 ms P95 on the deterministic backend.</li>
+              <li>Async dynamic batcher with batch-size and queue-wait bounds, single-flight coalescing of identical in-flight prompts, and a TTL/LRU semantic cache with a guard on numbers, quoted text and negation.</li>
+              <li>On an 80-request, 16-concurrency workload, coalescing cut backend generations from 16 to 3 at an 80% cache-hit rate on the deterministic backend.</li>
+              <li>A labelled cache study found semantic caching serving wrong answers, such as swapped unit conversions; per-family thresholds answer 67.6% of paraphrases with none wrong. A scheduling simulation shows continuous batching sustaining 10× the load of static batching within a 10 s p95 SLO.</li>
               <li>Swappable OpenAI-compatible backend, so the same harness runs against real vLLM, SGLang or Ollama servers.</li>
             </ul>
             <a class="txt-link" href="https://github.com/asher0913/inference-lab">github.com/asher0913/inference-lab ↗</a>
@@ -163,14 +165,14 @@
               <svg viewBox="0 0 160 96"><rect class="bx" x="12" y="16" width="22" height="28" rx="2"/><rect class="bx" x="12" y="52" width="22" height="28" rx="2"/><rect class="bx" x="40" y="34" width="22" height="28" rx="2"/><path class="tk" d="M17 24h12M17 30h12M17 60h12M17 66h12M45 42h12M45 48h12"/><path class="ln hl" d="M76 12v72"/><path class="ln" d="M34 30h42M34 66h26"/><path class="ln warn" d="M62 62l8 8m0-8-8 8"/><path class="ln" d="M76 30h20"/><path class="tk" d="M100 26h44M100 36h36M100 46h40M100 56h28"/><path class="ln" d="M96 22v38"/></svg>
             </span>
             <span class="w-main"><span class="w-title">SecureRAG</span><span class="w-kind mono">Retrieval security</span><span class="w-desc">Multi-tenant hybrid retrieval that checks permissions before ranking.</span></span>
-            <span class="w-result"><b class="mono">ACL first</b><span>fails closed on revoke</span></span>
+            <span class="w-result"><b class="mono">54%→0%</b><span>leaks after ACL changes</span></span>
             <span class="w-meta mono"><span>FastAPI · RAG</span><span>Oct–Nov 2023</span></span>
             <span class="w-chev" aria-hidden="true"></span>
           </summary>
           <div class="w-body">
             <ul>
-              <li>Tenant and ACL filters run before hybrid ranking, and permissions are re-checked live before context assembly, so revoked text never reaches the model.</li>
-              <li>BM25-style lexical retrieval with a swappable embedding interface, plus Recall@K, MRR and authorization-leakage regression tests.</li>
+              <li>Tenant and ACL filters run before hybrid ranking, with collection statistics from the caller's view only; each candidate is then re-checked live against the directory of record, failing closed, so revoked text never reaches the model.</li>
+              <li>Benchmarked five enforcement designs on a two-tenant corpus: post-filtering left 25% of contexts empty, and after permission changes a pre-filter on the stale index leaked on 54% of queries against 0% with the live re-check.</li>
               <li>Citation and denial audit events on every query.</li>
             </ul>
             <a class="txt-link" href="https://github.com/asher0913/secure-rag">github.com/asher0913/secure-rag ↗</a>
@@ -226,15 +228,15 @@
               <svg viewBox="0 0 160 96"><rect class="bx" x="14" y="14" width="92" height="68" rx="4"/><path class="tk" d="M14 26h92"/><circle class="nd-s" cx="22" cy="20" r="1.8"/><circle class="nd-s" cx="29" cy="20" r="1.8"/><path class="ln" d="M22 38l5 4-5 4"/><path class="tk" d="M32 46h40M22 56h60M22 66h48"/><path class="ln hl" d="M118 30l5 5 9-10"/><path class="ln warn" d="M119 48l10 10m0-10-10 10"/><path class="ln hl" d="M118 72l5 5 9-10"/></svg>
             </span>
             <span class="w-main"><span class="w-title">CodeTaskForge</span><span class="w-kind mono">Agent evaluation</span><span class="w-desc">The execution and evidence layer for coding agents.</span></span>
-            <span class="w-result"><b class="mono">5 classes</b><span>dependency · build · test · timeout · policy</span></span>
+            <span class="w-result"><b class="mono">25→0</b><span>wrong patches accepted</span></span>
             <span class="w-meta mono"><span>Python · Docker</span><span>Sep–Oct 2025</span></span>
             <span class="w-chev" aria-hidden="true"></span>
           </summary>
           <div class="w-body">
             <ul>
-              <li>Profiles a repository, then runs allowlisted, shell-free commands with timeouts, sanitised environments and path-traversal defences.</li>
-              <li>Classifies each failure and emits a deterministic JSON report that downstream evaluation can consume. CLI and FastAPI share one pipeline.</li>
-              <li>Docker and CI regression coverage.</li>
+              <li>SWE-bench-style judging: a path policy, throwaway workspaces, shell-free runs with scrubbed environments and process-group timeouts, restored tests, fail-to-pass and pass-to-pass, and held-out tests.</li>
+              <li>On 98 labelled candidate patches, exit codes accepted 25 wrong ones (test tampering, hard-coded answers), the SWE-bench protocol 15, and held-out tests none; every rejection was classified into the right one of eight failure kinds.</li>
+              <li>CLI, FastAPI and Docker share one harness; the API never reveals hidden test names.</li>
             </ul>
             <a class="txt-link" href="https://github.com/asher0913/code-task-forge">github.com/asher0913/code-task-forge ↗</a>
           </div>
@@ -254,7 +256,7 @@
           <div class="w-body">
             <ul>
               <li>AVCaptureMultiCamSession synchronises front-camera video with TrueDepth depth, and Vision shoulder landmarks define the chest region of interest.</li>
-              <li>Gaussian filtering and a weighted moving average turn the cropped depth signal into a respiratory curve plotted live in SwiftUI.</li>
+              <li>Gaussian filtering and a weighted moving average turn the cropped depth signal into a respiratory curve plotted live in SwiftUI, and an autocorrelation estimator reports breaths per minute (within 1 breath/min on 99.6% of noisy synthetic signals).</li>
               <li>No network client and no persistence. Grew out of a Software Engineering group project I led under Prof. Matthew Pike.</li>
             </ul>
             <a class="txt-link" href="https://github.com/asher0913/contactless-breathing-monitor">github.com/asher0913/contactless-breathing-monitor ↗</a>
@@ -304,28 +306,30 @@
 
       <div class="labs" data-reveal>
         <header class="labs-head">
-          <h3>Labs and coursework <span class="count mono">18</span></h3>
+          <h3>Labs and coursework <span class="count mono">20</span></h3>
           <p>Laptop-scale reference implementations of production problems, built for reproducible evaluation.</p>
         </header>
         <div class="labs-table" role="list">
-          <a role="listitem" href="https://github.com/asher0913/tiered-kv-cache-lab"><span class="mono">tiered-kv-cache-lab</span><span>GPU → CPU → NVMe KV cache with prefix reuse and capacity planning</span><em class="mono">serving</em></a>
-          <a role="listitem" href="https://github.com/asher0913/ai-gateway-control-plane"><span class="mono">ai-gateway-control-plane</span><span>Model routing, token buckets, budgets, circuit breakers, prompt versions</span><em class="mono">serving</em></a>
-          <a role="listitem" href="https://github.com/asher0913/edge-quantization-lab"><span class="mono">edge-quantization-lab</span><span>Per-layer INT8 sensitivity and mixed precision under an error budget</span><em class="mono">edge</em></a>
+          <a role="listitem" href="https://github.com/asher0913/tiered-kv-cache-lab"><span class="mono">tiered-kv-cache-lab</span><span>HBM → DRAM → NVMe prefix caching, TTFT under load, SLO capacity planning</span><em class="mono">serving</em></a>
+          <a role="listitem" href="https://github.com/asher0913/ai-gateway-control-plane"><span class="mono">ai-gateway-control-plane</span><span>Budgets, circuit breakers, latency-aware routing: p99 14.3 s → 5.8 s under faults</span><em class="mono">serving</em></a>
+          <a role="listitem" href="https://github.com/asher0913/edge-quantization-lab"><span class="mono">edge-quantization-lab</span><span>INT8/INT4 calibration, 6.4× mixed precision and a bit-exact integer kernel</span><em class="mono">edge</em></a>
           <a role="listitem" href="https://github.com/asher0913/vision-pipeline-orchestrator"><span class="mono">vision-pipeline-orchestrator</span><span>Backpressure-aware CPU/GPU DAG scheduler with retries and a DLQ</span><em class="mono">systems</em></a>
-          <a role="listitem" href="https://github.com/asher0913/agentops"><span class="mono">agentops</span><span>Incident-response agent with deterministic recovery and replayable traces</span><em class="mono">agents</em></a>
-          <a role="listitem" href="https://github.com/asher0913/agent-trace-lab"><span class="mono">agent-trace-lab</span><span>Process-level anti-pattern detection and failure attribution</span><em class="mono">agents</em></a>
-          <a role="listitem" href="https://github.com/asher0913/reflective-agent-lab"><span class="mono">reflective-agent-lab</span><span>Gated reflection, verification, rollback and skill extraction</span><em class="mono">agents</em></a>
-          <a role="listitem" href="https://github.com/asher0913/graph-sop-agent"><span class="mono">graph-sop-agent</span><span>Hybrid graph and BM25 retrieval for cited SOP execution</span><em class="mono">agents</em></a>
+          <a role="listitem" href="https://github.com/asher0913/agentops"><span class="mono">agentops</span><span>Incident investigation under flaky telemetry: 0.4% wrong vs 33.5%, replayable traces</span><em class="mono">agents</em></a>
+          <a role="listitem" href="https://github.com/asher0913/agent-trace-lab"><span class="mono">agent-trace-lab</span><span>Anti-pattern detection and root-cause attribution, stress-tested on 1,000 traces</span><em class="mono">agents</em></a>
+          <a role="listitem" href="https://github.com/asher0913/reflective-agent-lab"><span class="mono">reflective-agent-lab</span><span>Sandbox verification cuts irreversible side effects from 12.0 to 0.2 per 100 tasks</span><em class="mono">agents</em></a>
+          <a role="listitem" href="https://github.com/asher0913/graph-sop-agent"><span class="mono">graph-sop-agent</span><span>Service graph plus runbooks vs document-only RAG, with review-gated ingestion</span><em class="mono">agents</em></a>
           <a role="listitem" href="https://github.com/asher0913/risk-agent-workbench"><span class="mono">risk-agent-workbench</span><span>Evidence-grounded risk review that abstains when evidence is missing</span><em class="mono">agents</em></a>
           <a role="listitem" href="https://github.com/asher0913/document-vlm-data-engine"><span class="mono">document-vlm-data-engine</span><span>Figure matching, table validation, cross-page QA and hard samples</span><em class="mono">data</em></a>
           <a role="listitem" href="https://github.com/asher0913/multimodal-safety-lab"><span class="mono">multimodal-safety-lab</span><span>Cross-modal red-team benchmark with safety–utility metrics</span><em class="mono">safety</em></a>
-          <a role="listitem" href="https://github.com/asher0913/recsys-ranking-lab"><span class="mono">recsys-ranking-lab</span><span>Multi-stage retrieval and ranking with hard negatives</span><em class="mono">ranking</em></a>
+          <a role="listitem" href="https://github.com/asher0913/recsys-ranking-lab"><span class="mono">recsys-ranking-lab</span><span>ALS retrieval and GBDT re-ranking on MovieLens-100K, +40% HR@10</span><em class="mono">ranking</em></a>
+          <a role="listitem" href="https://github.com/asher0913/plant-leaf-recognition"><span class="mono">plant-leaf-recognition</span><span>ResNet-101 + ViT-B/16 fusion, 98.46% top-1 on 100 leaf species</span><em class="mono">vision</em></a>
           <a role="listitem" href="https://github.com/asher0913/music-emotion-regression"><span class="mono">music-emotion-regression</span><span>DEAM valence and arousal across eight model families, R² 0.604</span><em class="mono">ml</em></a>
-          <a role="listitem" href="https://github.com/asher0913/cifar10-ml-benchmark"><span class="mono">cifar10-ml-benchmark</span><span>PCA features, an MLP and a Random Forest under matched CV</span><em class="mono">ml</em></a>
-          <a role="listitem" href="https://github.com/asher0913/bin-packing-metaheuristics"><span class="mono">bin-packing-metaheuristics</span><span>Best-fit decreasing, simulated annealing, variable-neighbourhood search</span><em class="mono">algorithms</em></a>
-          <a role="listitem" href="https://github.com/asher0913/javafx-platformer"><span class="mono">javafx-platformer</span><span>Java 21 game built on MVC, commands, state machines and JUnit</span><em class="mono">software</em></a>
-          <a role="listitem" href="https://github.com/asher0913/treasure-hunt-pathfinding"><span class="mono">treasure-hunt-pathfinding</span><span>A* and BFS shortest-path hints in a Swing game</span><em class="mono">algorithms</em></a>
-          <a role="listitem" href="https://github.com/asher0913/flask-music-library"><span class="mono">flask-music-library</span><span>Flask and SQLite catalogue with validated, transactional imports</span><em class="mono">software</em></a>
+          <a role="listitem" href="https://github.com/asher0913/cifar10-ml-benchmark"><span class="mono">cifar10-ml-benchmark</span><span>PCA, an MLP and a Random Forest under matched CV; PCA helps one, hurts the other</span><em class="mono">ml</em></a>
+          <a role="listitem" href="https://github.com/asher0913/classical-ai-search"><span class="mono">classical-ai-search</span><span>Six search algorithms on 300 seeded mazes, turn-aware routing, MDPs</span><em class="mono">algorithms</em></a>
+          <a role="listitem" href="https://github.com/asher0913/bin-packing-metaheuristics"><span class="mono">bin-packing-metaheuristics</span><span>BFD, Minimum Bin Slack and annealing on Falkenauer's OR-Library instances</span><em class="mono">algorithms</em></a>
+          <a role="listitem" href="https://github.com/asher0913/javafx-platformer"><span class="mono">javafx-platformer</span><span>Java 21 game built on MVC, commands, state machines and data-checked levels</span><em class="mono">software</em></a>
+          <a role="listitem" href="https://github.com/asher0913/treasure-hunt-pathfinding"><span class="mono">treasure-hunt-pathfinding</span><span>A* and BFS hints in a Swing game; A* expands 7× fewer cells</span><em class="mono">algorithms</em></a>
+          <a role="listitem" href="https://github.com/asher0913/flask-music-library"><span class="mono">flask-music-library</span><span>Flask and SQLite catalogue with CSRF-protected, transactional writes</span><em class="mono">software</em></a>
         </div>
       </div>
     </section>
