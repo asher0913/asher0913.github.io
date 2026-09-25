@@ -286,7 +286,7 @@
   add("Links", "Copy email address", "clipboard", function () {
     if (navigator.clipboard) navigator.clipboard.writeText("yixuan58@illinois.edu");
   });
-  add("Links", "Open résumé", "PDF", openUrl("Yixuan_Zhang_Resume.pdf?v=20260922c"));
+  add("Links", "Open résumé", "PDF", openUrl("Yixuan_Zhang_Resume.pdf?v=20260924"));
   add("Links", "GitHub", "asher0913", openUrl("https://github.com/asher0913"));
   add("Links", "LinkedIn", "profile", openUrl("https://www.linkedin.com/in/yixuan-zhang-b656392b5"));
 
